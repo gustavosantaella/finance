@@ -13,11 +13,11 @@ def decodeJWT(entry: str):
 
 def encrypt(entry: str) -> str:
     encrypted = bcrypt.hashpw(entry.encode(), bcrypt.gensalt())
-    return encrypted
+    return encrypted.decode("utf-8")
 
 
 def decrypt(entry: str, hashed: str) -> bool:
-    if bcrypt.checkpw(entry.encode(), hashed):
+    if bcrypt.checkpw(entry.encode(), hashed.encode()):
         return True
     return False
 
