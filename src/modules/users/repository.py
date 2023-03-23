@@ -14,3 +14,6 @@ class UserRepositoy(Document):
     
     def new(data: dict):
         return UserRepositoy(**data).save()
+    
+    def findByEmail(email: str):
+        return UserRepositoy.objects(email=email).first()
