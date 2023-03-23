@@ -1,6 +1,6 @@
 from .user_dto import RegisterUserDTO, LoginUserDTO
 from .repository import UserRepositoy
-from src.helpers import encrypt, Errors, decrypt
+from src.helpers import encrypt, Errors, decrypt, encodeJWT
 class UserService:
         
     def register(payload: RegisterUserDTO):
@@ -17,4 +17,7 @@ class UserService:
         
         if decrypt(payload.password, user.password) != True:
             return None, Errors.invalid_password['msg'], Errors.invalid_password['code']
-        return True, None, None
+        token = encodeJWT({
+            "userId": str(user.id)
+        })
+        return token, None, None

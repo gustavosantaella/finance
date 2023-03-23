@@ -48,7 +48,6 @@ def response(content: any = {}, status: int = 200, **kwargs):
     if content != None:
         result['data'] = content
 
-    print(result)
     return JSONResponse(content=result, status_code=result['status'])
 
 
