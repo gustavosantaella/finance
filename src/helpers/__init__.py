@@ -47,8 +47,11 @@ def response(content: any = {}, status: int = 200, **kwargs):
 
     if content != None:
         result['data'] = content
+        
+    if 'extra' not in kwargs:
+        kwargs['extra'] = {}
 
-    return JSONResponse(content=result, status_code=result['status'])
+    return JSONResponse(content=result, status_code=result['status'], **kwargs['extra'])
 
 
 class Errors:
@@ -62,3 +65,10 @@ class Errors:
         "msg": 'Invalid password',
         "code": 400
     }
+
+from enum import Enum
+class EnumHelper(Enum): 
+    
+    @classmethod
+    def list(cls):
+        return list(map(lambda c: c.value, cls))
