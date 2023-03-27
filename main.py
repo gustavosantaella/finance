@@ -6,8 +6,8 @@ from uvicorn import run
 load_dotenv()
 
 
-# cretae app
 def app():
+    # cretae app
     app = FastAPI()
 
     main_routes(app)
@@ -15,5 +15,5 @@ def app():
     connect_db()
 
 if __name__ == "__main__":
-    run("main:app")
+    run("main:app", host="0.0.0.0", port=10000)
     
