@@ -34,7 +34,6 @@ mangum==0.17.0
 mockupdb==1.8.1
 multidict==6.0.4
 openpyxl==3.0.10
-pandas==1.5.1
 proto-plus==1.22.1
 protobuf==4.21.8
 pyasn1==0.4.8

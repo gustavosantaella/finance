@@ -1,4 +1,8 @@
 .venv
 */**/__pycache__
 .env
+<<<<<<< HEAD
+database/mongo/csv
+=======
 database/csv
+>>>>>>> 77105e359f420b2f2c08d71772d64daaa9b97de4
