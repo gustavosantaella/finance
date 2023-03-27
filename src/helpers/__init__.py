@@ -1,14 +1,14 @@
 import jwt
 import bcrypt
 from fastapi.responses import JSONResponse
-
+from config import env
 
 def encodeJWT(entry: dict) -> str:
-    return jwt.encode(entry, "secret", algorithm="HS256")
+    return jwt.encode(entry, env("JWT_SECRET_KEY"), algorithm="HS256")
 
 
 def decodeJWT(entry: str):
-    return jwt.decode(entry, "secret", algorithms=["HS256"])
+    return jwt.decode(entry, env("JWT_SECRET_KEY"), algorithms=["HS256"])
 
 
 def encrypt(entry: str) -> str:
