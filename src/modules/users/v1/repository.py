@@ -23,7 +23,7 @@ class UserRepositoy(Document):
     def findByEmail(email: str):
         return UserRepositoy.objects(email=email).first()
     
-    def check_roles(user_id: str, roles: list[str]):
+    def check_roles(user_id: str, roles: list):
         return list(UserRepositoy.objects().aggregate([
             {
                 "$match":{

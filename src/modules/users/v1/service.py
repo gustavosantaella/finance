@@ -26,7 +26,7 @@ class UserService:
         })
         return token, None, None
 
-    def checkRole(user_id: str, roles: list[str]):
+    def checkRole(user_id: str, roles: list):
         try:
             hasRoles =  UserRepositoy.check_roles(user_id, roles)
             if len(hasRoles) == 0:
