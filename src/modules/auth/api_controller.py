@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Request
-from src.modules.users.v1.user_dto import RegisterUserDTO, LoginUserDTO
-from src.modules.users.v1.service import UserService
+from src.modules.users.user_dto import RegisterUserDTO, LoginUserDTO
+from src.modules.users.service import UserService
 from .auth_dto import RolesDTO
 from src.helpers import response
 from .guard import AuthRole

@@ -39,11 +39,12 @@ status: int
 """
 
 
-def response(content: any = {}, status: int = 200, **kwargs):
+def response(content = None, status: int = 200, **kwargs):
     result = {}
     result['status'] = status if status != None else 200
     if "error" in kwargs and kwargs['error'] != None:
         result['error'] = kwargs['error']
+        result['status'] = 400
 
     if content != None:
         result['data'] = content

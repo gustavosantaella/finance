@@ -1,6 +1,6 @@
 from mongoengine import *
 from datetime import datetime
-from src.modules.auth.v1.auth_dto import RolesDTO
+from src.modules.auth.auth_dto import RolesDTO
 from mongoengine import *
 from bson import ObjectId
 
@@ -11,6 +11,7 @@ class UserRepositoy(Document):
     password = StringField(required=True)
     created_at = DateTimeField(default=datetime.now(), required=True)
     updated_at = DateTimeField(default=None)
+    country = StringField(required=True)
 
     meta = {
         "collection": "users"

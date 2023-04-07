@@ -1,7 +1,7 @@
 from functools import wraps
 from src.helpers import response, decodeJWT
 from fastapi import Request
-from src.modules.users.v1.service import UserService
+from src.modules.users.service import UserService
 def AuthRole(roles):
     def decorator(fn):
         @wraps(fn)
@@ -16,7 +16,7 @@ def AuthRole(roles):
             if len(token) != 2:
                 return response(error="Invalid token", status=400)
             
-            if "Finance" not in token:
+            if "Wafi" not in token:
                 return response(error="Invalid token", status=400)
             
             decode = decodeJWT(token[1])
