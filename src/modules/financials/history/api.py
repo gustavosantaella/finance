@@ -18,9 +18,10 @@ def add(request: Request, body: HistoryDTO):
 
 @router.get("/{walletId}")
 @AuthRole(['customer'])
-def getByWallet(request: Request, walletId: str):
+def getByWallet(request: Request, walletId: str, month = None, date = None):
     try:
-        data = FinancialHistoryService.getHistoryByWalletId(walletId)
+        print(month)
+        data = FinancialHistoryService.getHistoryByWalletId(walletId, month, date)
         return response(content=data)
     except Exception as e:
         return response(error=str(e), status=400)

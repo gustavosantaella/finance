@@ -10,5 +10,10 @@ constants = {
         "forBusiness":{
 
         }
+    },
+    
+    "responses":{
+        "ok":'OK',
+        "err":'ERR'
     }
 }

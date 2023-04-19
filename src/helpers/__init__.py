@@ -2,6 +2,7 @@ import jwt
 import bcrypt
 from fastapi.responses import JSONResponse
 from config import env
+from config.definitions import constants
 
 def encodeJWT(entry: dict) -> str:
     return jwt.encode(entry, env("JWT_SECRET_KEY"), algorithm="HS256")
@@ -42,6 +43,7 @@ status: int
 def response(content = None, status: int = 200, **kwargs):
     result = {}
     result['status'] = status if status != None else 200
+    result['ok'] = constants['responses']['ok'] if 'ok' not in kwargs and status not in Errors.codes  else constants['responses']['err'] 
     if "error" in kwargs and kwargs['error'] != None:
         result['error'] = kwargs['error']
         result['status'] = 400
@@ -51,12 +53,14 @@ def response(content = None, status: int = 200, **kwargs):
         
     if 'extra' not in kwargs:
         kwargs['extra'] = {}
+        
 
     return JSONResponse(content=result, status_code=result['status'], **kwargs['extra'])
 
 
 class Errors:
 
+    codes = [400, 403, 401, 500]
     not_found = {
         "msg": "User not found",
         "code": 404
