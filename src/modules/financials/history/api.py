@@ -20,8 +20,19 @@ def add(request: Request, body: HistoryDTO):
 @AuthRole(['customer'])
 def getByWallet(request: Request, walletId: str, month = None, date = None):
     try:
-        print(month)
+        print(walletId)
         data = FinancialHistoryService.getHistoryByWalletId(walletId, month, date)
         return response(content=data)
     except Exception as e:
+        return response(error=str(e), status=400)
+    
+@router.get("/{walletId}/{historyId}")
+@AuthRole(['customer'])
+def historyDetail(request: Request, walletId: str, historyId):
+    try:
+        print(walletId, historyId)
+        data = FinancialHistoryService.historyDetail(walletId, historyId)
+        return response(content=data)
+    except Exception as e:
+        print(e)
         return response(error=str(e), status=400)

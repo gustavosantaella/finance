@@ -69,24 +69,69 @@ class FinancialHistoryRepository(Document):
                     }
                 }
             ]
-        
+
         if date:
             pipeline = [
                 *pipeline,
                 {
-                    "$addFields":{
-                        "dateString":{
-                            "$dateToString":{
-                                "date":"$date",
-                                "format":"%Y-%m-%d"
+                    "$addFields": {
+                        "dateString": {
+                            "$dateToString": {
+                                "date": "$date",
+                                "format": "%Y-%m-%d"
                             }
                         }
                     }
                 },
                 {
-                    "$match":{
+                    "$match": {
                         "dateString": datetime.strftime(datetime.strptime(date, "%Y-%m-%d"), "%Y-%m-%d")
                     }
                 }
             ]
+        
+        pipeline = [
+            *pipeline,
+            {
+                "$match":{
+                     "walletId": ObjectId(id),
+                }
+            }
+        ]
         return FinancialHistoryRepository.objects().aggregate(pipeline)
+
+    def detail(walletId, historyId):
+        data = FinancialHistoryRepository.objects().aggregate([
+            {
+                "$match": {
+                    "walletId": ObjectId(walletId),
+                    "_id": ObjectId(historyId),
+                }
+            },
+            {
+                "$lookup": {
+                    "from": "categories",
+                    "foreignField": "_id",
+                    "localField": "categoryId",
+                    'as': "categories"
+                }
+            },
+            {
+                "$unwind": "$categories"
+            },
+            {
+                "$set":{
+                    "categories._id":{
+                        "$toString":"$categories._id"
+                    },
+                   "walletId":{
+                        "$toString":"$walletId"
+                    },
+                   "_id":{
+                        "$toString":"$_id"
+                    },
+                }
+            }
+        ])
+        
+        return data

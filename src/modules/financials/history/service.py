@@ -2,6 +2,8 @@ from .dto import HistoryDTO
 from src.modules.categories.service import CategoryService
 from .repository import FinancialHistoryRepository
 from config.definitions import constants
+from fastapi.encoders import jsonable_encoder
+
 
 
 class FinancialHistoryService:
@@ -63,5 +65,17 @@ class FinancialHistoryService:
                 "total":totalHistory if totalHistory> 0 else 0.0,
                 "history": history
             }
+        except Exception as e:
+            raise e
+        
+    def historyDetail(walletId, historyId):
+        try:
+            data = list(FinancialHistoryRepository.detail(walletId, historyId))
+            if len(data) == 0:
+                raise Exception("Not found")
+            data = data[0]
+            del data['categoryId']
+            return data
+            
         except Exception as e:
             raise e
