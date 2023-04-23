@@ -6,9 +6,9 @@ from src.modules.countries.service import CountryService
 from src.modules.wallet.service import WalletService
 from src.modules.wallet.dto import NewWalletDTO
 from src.modules.wallet.service import WalletService
+from src.helpers import to_json
 from datetime import datetime
-
-
+from .user_dto import UpdateUserDTO
 class UserService:
 
     def register(payload: RegisterUserDTO):
@@ -41,7 +41,6 @@ class UserService:
             "userId": str(user.id)
         })
         wallets = WalletService.getAllByOwnerId(str(user.id))
-        print('wallets',wallets)
         return {
             "token": token,
             "userId": str(user.id),
@@ -56,3 +55,30 @@ class UserService:
             return True
         except Exception as e:
             raise e 
+    
+    def get_by_id(id: str):
+        try:
+            data = UserRepositoy.findById(id)
+            
+            return to_json(data.to_json())
+        except Exception as e:
+            raise e
+    
+    def update_info(payload: UpdateUserDTO, user_id: str):
+        try:
+            data = payload.dict()
+            aux_data = {}
+            for k in data:
+                if data[k] != None:
+                    aux_data[k] = data[k]
+            
+            del data
+            
+            if 'password' in aux_data:
+                aux_data['password'] = encrypt(aux_data['password'])
+
+            UserRepositoy.updateInfo(aux_data, user_id)
+            return True
+        except Exception as e:
+            raise e
+        

@@ -3,10 +3,12 @@ from database.mongo.main import connect_db
 from src.routes import main as main_routes
 from dotenv import load_dotenv
 from uvicorn import run
+import asyncio
 load_dotenv()
 
-# global MAX_USER
+from database.mongo.main import connect_db
 
+connect_db()    
 
 # cretae app
 app = FastAPI()
@@ -14,7 +16,8 @@ app = FastAPI()
 
 main_routes(app)
 
-connect_db()
 
 
-    
+
+
+

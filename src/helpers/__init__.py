@@ -39,11 +39,14 @@ status: int
     
 """
 
+def to_json(obj):
+    from json import loads
+    return loads(obj)
 
 def response(content = None, status: int = 200, **kwargs):
     result = {}
     result['status'] = status if status != None else 200
-    result['ok'] = constants['responses']['ok'] if 'ok' not in kwargs and status not in Errors.codes  else constants['responses']['err'] 
+    result['ok'] = constants['responses']['ok'] if 'ok' not in kwargs and status not in Errors.codes and 'error' not in kwargs else constants['responses']['err'] 
     if "error" in kwargs and kwargs['error'] != None:
         result['error'] = kwargs['error']
         result['status'] = 400
