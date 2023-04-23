@@ -1,4 +1,8 @@
-from src.modules.auth.v1.api_controller import router as auth_router
+from src.modules.auth.api_controller import router as auth_router
+from src.modules.categories.api import router as category_router
+from src.modules.financials.history.api import router as history_router
+from src.modules.wallet.api import router as wallet_router
+from src.modules.users.api import router as users_router
 from fastapi import APIRouter
 
 def main(ctx: APIRouter):
@@ -9,10 +13,13 @@ def main(ctx: APIRouter):
             "status":True
         }
     """
-        Api version 1.0
+        Api version
         """ 
-    apiv1 = APIRouter(prefix="/api/v1")
+    api = APIRouter(prefix="/api")
 
-    apiv1.include_router(router=auth_router)
-    apiv1.include_router(router=auth_router)
-    ctx.include_router(apiv1)    
+    api.include_router(router=auth_router)
+    api.include_router(router=category_router)
+    api.include_router(router=history_router)
+    api.include_router(router=wallet_router)
+    api.include_router(router=users_router)
+    ctx.include_router(api)    

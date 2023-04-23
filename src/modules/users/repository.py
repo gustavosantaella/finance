@@ -1,6 +1,6 @@
 from mongoengine import *
 from datetime import datetime
-from src.modules.auth.v1.auth_dto import RolesDTO
+from src.modules.auth.auth_dto import RolesDTO
 from mongoengine import *
 from bson import ObjectId
 
@@ -11,6 +11,9 @@ class UserRepositoy(Document):
     password = StringField(required=True)
     created_at = DateTimeField(default=datetime.now(), required=True)
     updated_at = DateTimeField(default=None)
+    name = StringField()
+    country = StringField(required=True)
+    
 
     meta = {
         "collection": "users"
@@ -22,6 +25,9 @@ class UserRepositoy(Document):
     
     def findByEmail(email: str):
         return UserRepositoy.objects(email=email).first()
+    
+    def findById(id: str):
+        return UserRepositoy.objects(id=id).first()
     
     def check_roles(user_id: str, roles: list):
         return list(UserRepositoy.objects().aggregate([
@@ -41,3 +47,6 @@ class UserRepositoy(Document):
                 }
             }
         ]))
+        
+    def updateInfo(data, user_id: str):
+        return UserRepositoy.objects(id=user_id).modify(**data)
