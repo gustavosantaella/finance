@@ -30,15 +30,22 @@ class UserRepositoy(Document):
         return UserRepositoy.objects(id=id).first()
     
     def check_roles(user_id: str, roles: list):
-        print(roles, user_id)
         return list(UserRepositoy.objects().aggregate([
             {
                 "$match":{
                     "_id": ObjectId(user_id)
                 }
             },
-
-       
+            {
+                "$unwind":"$roles"
+            },
+            {
+                "$match":{
+                    "roles":{
+                        "$in": roles
+                    }
+                }
+            }
         ]))
         
     def updateInfo(data, user_id: str):
