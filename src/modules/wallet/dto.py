@@ -6,3 +6,4 @@ class NewWalletDTO(BaseModel):
     owner : str= None
     balance :int = 0
     currency :str
+    walletId: str

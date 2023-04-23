@@ -23,7 +23,8 @@ class UserService:
             wallet = NewWalletDTO(
                 name=str(datetime.timestamp(datetime.now())),
                 owner=str(user.id),
-                currency= country.currency
+                currency= country.currency,
+                walletId=datetime.timestamp(datetime.now())
                 )
             WalletService.new(wallet)
             return True
@@ -50,6 +51,7 @@ class UserService:
     def checkRole(user_id: str, roles: list):
         try:
             hasRoles =  UserRepositoy.check_roles(user_id, roles)
+            print(hasRoles)
             if len(hasRoles) == 0:
                 return False
             return True
