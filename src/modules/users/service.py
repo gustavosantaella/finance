@@ -83,3 +83,10 @@ class UserService:
         except Exception as e:
             raise e
         
+    def delete_account(userId):
+        try:
+            UserRepositoy.remove_account(userId)
+            return True
+        except Exception as e:
+            raise e
+        

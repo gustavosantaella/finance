@@ -25,6 +25,15 @@ def get_user(request: Request):
         return response(content=data)
     except Exception as e:
         return response(error=str(e))
+ 
+@router.get("/delete-account")
+@AuthRole(['customer'])
+def get_user(request: Request):
+    try:
+        data = UserService.delete_account(request.profile['userId'])
+        return response(content=data)
+    except Exception as e:
+        return response(error=str(e))
     
 # @router.get("/get")
 # @AuthRole(['customer'])
