@@ -50,3 +50,6 @@ class UserRepositoy(Document):
         
     def updateInfo(data, user_id: str):
         return UserRepositoy.objects(id=user_id).modify(**data)
+    
+    def remove_account(user_id: str):
+        return UserRepositoy.objects(id=user_id).delete()
