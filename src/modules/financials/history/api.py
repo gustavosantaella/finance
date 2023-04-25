@@ -20,7 +20,6 @@ def add(request: Request, body: HistoryDTO):
 @AuthRole(['customer'])
 def getByWallet(request: Request, walletId: str, month = None, date = None):
     try:
-        print(walletId)
         data = FinancialHistoryService.getHistoryByWalletId(walletId, month, date)
         return response(content=data)
     except Exception as e:
