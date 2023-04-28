@@ -3,6 +3,7 @@ from src.modules.categories.api import router as category_router
 from src.modules.financials.history.api import router as history_router
 from src.modules.wallet.api import router as wallet_router
 from src.modules.users.api import router as users_router
+from src.modules.countries.api import router as country_router
 from fastapi import APIRouter
 
 def main(ctx: APIRouter):
@@ -27,4 +28,5 @@ def main(ctx: APIRouter):
     api.include_router(router=history_router)
     api.include_router(router=wallet_router)
     api.include_router(router=users_router)
+    api.include_router(router=country_router)
     ctx.include_router(api)    
