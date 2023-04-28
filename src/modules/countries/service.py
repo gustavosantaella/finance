@@ -5,7 +5,16 @@ class CountryService:
         try:
             country = CountryRepository.findByIso2(iso2)
             if not country:
-                raise Exception("Country not found")
+                country = CountryRepository.findByName(iso2)
+                if not country:
+                        raise Exception("Country not found")
+            return country
+        except Exception as e:
+            raise e
+        
+    def get_keys():
+        try:
+            country = CountryRepository.get_keys()
             return country
         except Exception as e:
             raise e

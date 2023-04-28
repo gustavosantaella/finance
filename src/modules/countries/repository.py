@@ -10,3 +10,18 @@ class CountryRepository(DynamicDocument):
     
     def findByIso2(iso2: str):
         return CountryRepository.objects(iso2=iso2).first()
+    
+    
+    def findByName(name: str):
+        return CountryRepository.objects(name=name).first()
+    
+    
+    def get_keys() -> list:
+        return list(CountryRepository.objects().aggregate([
+            {
+                "$project":{
+                    "name": 1,
+                    "_id": 0
+                }
+            }
+        ]))
