@@ -92,6 +92,18 @@ class FinancialHistoryRepository(Document):
         
         pipeline = [
             *pipeline,
+             {
+                "$lookup": {
+                    "from": "categories",
+                    "foreignField": "_id",
+                    "localField": "categoryId",
+                    'as': "categories"
+                }
+            },
+            {
+                "$unwind": "$categories"
+            },
+            
             {
                 "$match":{
                      "walletId": ObjectId(id),
