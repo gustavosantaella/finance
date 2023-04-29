@@ -7,11 +7,11 @@ from fastapi import Request
 router = APIRouter(prefix='/wallet')
 
 
-@router.get('/by-owner/{ownerId}')
+@router.get('/by-owner')
 @AuthRole(['customer'])
-def getByOwner(request: Request, ownerId: str):
+def getByOwner(request: Request):
     try:
-        data = WalletService.getAllByOwnerId(ownerId)
+        data = WalletService.getAllByOwnerId(request.profile['userId'])
         return response(content=data)
     except Exception as e:
         return response(error=str(e))
