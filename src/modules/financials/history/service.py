@@ -140,7 +140,8 @@ class FinancialHistoryService:
                 "incomes":incomes if incomes> 0 else 0.0,
                 "expenses":expenses if expenses> 0 else 0.0,
                 "total":totalHistory if totalHistory> 0 else 0.0,
-                "history": history
+                "history": history,
+                "walletId": id
             }
         except Exception as e:
             print(e)
