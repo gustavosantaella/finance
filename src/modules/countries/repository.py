@@ -19,6 +19,9 @@ class CountryRepository(DynamicDocument):
     def get_keys() -> list:
         return list(CountryRepository.objects().aggregate([
             {
+              "$sort":{"$name":-1}  
+            },
+            {
                 "$project":{
                     "name": 1,
                     "_id": 0
