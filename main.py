@@ -11,7 +11,9 @@ from database.mongo.main import connect_db
 connect_db()    
 
 # cretae app
-app = FastAPI()
+app = FastAPI(
+    title="Finance API"
+)
 
 
 main_routes(app)

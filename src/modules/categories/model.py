@@ -8,7 +8,7 @@ class CategoryModel(Document):
     }
     
     def all():
-        return CategoryModel.objects.all().values_list("name", 'id')
+        return CategoryModel.objects.all().values_list("name", 'id').order_by("name")
     
     def findByIdOrName(id: str):
         return CategoryModel.objects.get(id=id)
