@@ -7,9 +7,9 @@ class CategoryService:
         except Exception as e:
             raise e
         
-    def all():
+    def all(lang):
         try:
-            data = CategoryModel.all()
+            data = CategoryModel.all(lang)
             return list(map(lambda x: {"label":x[0], "id":str(x[1])}, data)) , None
         except Exception as e:
             raise e

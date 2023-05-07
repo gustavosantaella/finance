@@ -48,13 +48,13 @@ class FinancialHistoryService:
 
             history = list(map(format, histoires))
             get_sum_by_type = lambda history_type: lambda x: x['value'] if x['type'] == constants['wallet_history']['types'][history_type] else 0
-            incomes = sum(list(map(
-               get_sum_by_type(constants['wallet_history']['types']['income']), history)))
-            expenses = sum(list(map(get_sum_by_type(constants['wallet_history']['types']['expense'])
-                 , history)))
-            totalHistory = sum(list(map(lambda x: x['value'], history)))
-            incomes_percentage = round((incomes / totalHistory) * 100, 3) if totalHistory > 0 else 0.0
-            expenses_percentage = round((expenses / totalHistory) * 100, 3) if totalHistory > 0 else 0.0 
+            incomes = round(sum(list(map(
+               get_sum_by_type(constants['wallet_history']['types']['income']), history))), 2)
+            expenses = round(sum(list(map(get_sum_by_type(constants['wallet_history']['types']['expense'])
+                 , history))), 2)
+            totalHistory = round(sum(list(map(lambda x: x['value'], history))),2)
+            incomes_percentage = round((incomes / totalHistory) * 100, 2) if totalHistory > 0 else 0.0
+            expenses_percentage = round((expenses / totalHistory) * 100, 2) if totalHistory > 0 else 0.0 
             
             barChart = []
             categories = []

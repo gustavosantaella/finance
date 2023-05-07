@@ -13,7 +13,7 @@ class HistoryDTO(BaseModel):
     type: HistoryType
     description: str = None
     provider: str = None
-    categoryId: str = None
+    categoryId: str
     walletId: str = None
     value: Union[str, float]
     

@@ -36,10 +36,10 @@ class WalletService:
             balance = incomes - expenses
             growth_rate_value = 0
             return {
-                "balance": balance,
-                "incomes": incomes,
-                "expenses": expenses,
-                "growthRate": growth_rate_value,
+                "balance": round(balance, 2),
+                "incomes": round(incomes,2),
+                "expenses": round(expenses,2),
+                "growthRate": round(growth_rate_value,2),
                 "info": {
                     "walletId": str(wallet['_id']),
                     "owner": str(wallet['owner']),

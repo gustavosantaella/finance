@@ -17,9 +17,9 @@ def categoriesByAdmin():
     
 @router.get('/')
 @AuthRole(['customer'])
-def all(request: Request):
+def all(request: Request, lang: str = 'en'):
     try:
-        data, error = CategoryService.all()
+        data, error = CategoryService.all(lang)
         return response(data)
     except Exception as e:
         return response(error=str(e), status=400)

@@ -1,0 +1,2069 @@
+[{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb72f"
+  },
+  "name": "ARCHITECTURE & PLANNING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb748"
+  },
+  "name": "CRAFTS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb735"
+  },
+  "name": "BEAUTY & PERSONAL CARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb74f"
+  },
+  "name": "E-LEARNING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb74d"
+  },
+  "name": "DENTAL",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb756"
+  },
+  "name": "EXHIBITIONS & EVENTS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb766"
+  },
+  "name": "HEALTH & FITNESS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb78e"
+  },
+  "name": "TRANSPORTATION & LOGISTICS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb79e"
+  },
+  "name": "AUTOMOTIVE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b6"
+  },
+  "name": "HOME SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb731"
+  },
+  "name": "ARTS & ENTERTAINMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb76d"
+  },
+  "name": "INDIVIDUAL & FAMILY SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb772"
+  },
+  "name": "INSURANCE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb777"
+  },
+  "name": "JEWELRY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb785"
+  },
+  "name": "RESTAURANT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb786"
+  },
+  "name": "RETAIL",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb789"
+  },
+  "name": "IT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb78f"
+  },
+  "name": "AGRICULTURE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb79c"
+  },
+  "name": "GOVERNMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a5"
+  },
+  "name": "COSMETICS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b0"
+  },
+  "name": "GAMING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b8"
+  },
+  "name": "IMPORT & EXPORT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "6429bffdbd935962e5bbde6a"
+  },
+  "name": "OTHERS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb734"
+  },
+  "name": "BANKING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb738"
+  },
+  "name": "BUILDING MATERIALS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb736"
+  },
+  "name": "BIOTECHNOLOGY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb72a"
+  },
+  "name": "ACCOUNTING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb75c"
+  },
+  "name": "FISHING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb763"
+  },
+  "name": "GAS & OIL",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb764"
+  },
+  "name": "GLASS & CERAMICS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb76c"
+  },
+  "name": "IMPORT & EXPORT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb76e"
+  },
+  "name": "INDUSTRIAL AUTOMATION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb779"
+  },
+  "name": "LAW ENFORCEMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7ac"
+  },
+  "name": "FASHION & APPAREL",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b7"
+  },
+  "name": "HUMAN RESOURCES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb73b"
+  },
+  "name": "CIVIC & SOCIAL ORGANIZATIONS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb752"
+  },
+  "name": "ENGINEERING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb75e"
+  },
+  "name": "FOOD PRODUCTION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb75f"
+  },
+  "name": "FUNDRAISING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb781"
+  },
+  "name": "MARINE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7ae"
+  },
+  "name": "FISHING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c4"
+  },
+  "name": "MACHINERY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb780"
+  },
+  "name": "MANAGEMENT CONSULTING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb78c"
+  },
+  "name": "CONSTRUCTION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb790"
+  },
+  "name": "ENERGY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb793"
+  },
+  "name": "TELECOMMUNICATIONS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b3"
+  },
+  "name": "GREEN TECHNOLOGY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7be"
+  },
+  "name": "LANDSCAPING & GARDENING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d0"
+  },
+  "name": "NANOTECHNOLOGY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb72e"
+  },
+  "name": "APPAREL & FASHION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb732"
+  },
+  "name": "AUTOMOTIVE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb750"
+  },
+  "name": "ELECTRICAL & ELECTRONIC MANUFACTURING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb758"
+  },
+  "name": "FARMING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb75a"
+  },
+  "name": "FINANCIAL SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb75b"
+  },
+  "name": "FINE ART",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb767"
+  },
+  "name": "HEALTHCARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb77c"
+  },
+  "name": "LIBRARIES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb77d"
+  },
+  "name": "LOGISTICS & SUPPLY CHAIN",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a2"
+  },
+  "name": "COMPUTER HARDWARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a4"
+  },
+  "name": "CONSUMER GOODS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7ad"
+  },
+  "name": "FILM & VIDEO",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b4"
+  },
+  "name": "HEATING, VENTILATION & AIR CONDITIONING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d9"
+  },
+  "name": "PETROLEUM & COAL PRODUCTS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb73e"
+  },
+  "name": "COMPUTER GAMES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb742"
+  },
+  "name": "CONSTRUCTION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb747"
+  },
+  "name": "COSMETICS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb751"
+  },
+  "name": "ENERGY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb76b"
+  },
+  "name": "HUMAN RESOURCES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb776"
+  },
+  "name": "INVESTMENT MANAGEMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb794"
+  },
+  "name": "INSURANCE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb797"
+  },
+  "name": "FOOD & BEVERAGE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb79a"
+  },
+  "name": "SPORTS & FITNESS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb79d"
+  },
+  "name": "ARTS & CULTURE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7ba"
+  },
+  "name": "INFORMATION SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c0"
+  },
+  "name": "LIBRARIES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c5"
+  },
+  "name": "MANAGEMENT CONSULTING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c8"
+  },
+  "name": "MARKETING & ADVERTISING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7dc"
+  },
+  "name": "PRINTING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb770"
+  },
+  "name": "INFORMATION SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb775"
+  },
+  "name": "INVESTMENT BANKING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b1"
+  },
+  "name": "GLASS, CERAMICS & CONCRETE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c7"
+  },
+  "name": "MARKET RESEARCH",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d8"
+  },
+  "name": "PERFORMING ARTS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7df"
+  },
+  "name": "RAILROADS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb76f"
+  },
+  "name": "INDUSTRIAL GOODS & SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb778"
+  },
+  "name": "JOURNALISM",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb77a"
+  },
+  "name": "LEGAL SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a3"
+  },
+  "name": "COMPUTER SOFTWARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a9"
+  },
+  "name": "ELECTRONICS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b2"
+  },
+  "name": "GRAPHIC DESIGN",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb73a"
+  },
+  "name": "CHEMICALS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c3"
+  },
+  "name": "MACHINE LEARNING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c9"
+  },
+  "name": "MECHANICAL OR INDUSTRIAL ENGINEERING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d4"
+  },
+  "name": "ONLINE MARKETPLACES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb739"
+  },
+  "name": "BUSINESS SUPPLIES & EQUIPMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb737"
+  },
+  "name": "BROADCAST MEDIA",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb73d"
+  },
+  "name": "COMPUTER & NETWORK SECURITY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb741"
+  },
+  "name": "COMPUTER SOFTWARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb74b"
+  },
+  "name": "DAIRY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb754"
+  },
+  "name": "ENVIRONMENTAL SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb755"
+  },
+  "name": "EVENT SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb765"
+  },
+  "name": "GRAPHIC DESIGN",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb768"
+  },
+  "name": "HIGHER EDUCATION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb769"
+  },
+  "name": "HOSPITAL & HEALTH CARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb771"
+  },
+  "name": "INFORMATION TECHNOLOGY & SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb773"
+  },
+  "name": "INTERNATIONAL TRADE & DEVELOPMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb774"
+  },
+  "name": "INTERNET",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb784"
+  },
+  "name": "MECHANICAL OR INDUSTRIAL ENGINEERING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb78d"
+  },
+  "name": "REAL ESTATE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7ab"
+  },
+  "name": "EVENTS & TRADE SHOWS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7af"
+  },
+  "name": "FORESTRY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7dd"
+  },
+  "name": "PUBLIC RELATIONS & COMMUNICATIONS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb73f"
+  },
+  "name": "COMPUTER HARDWARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb757"
+  },
+  "name": "FACILITIES SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb75d"
+  },
+  "name": "FOOD & BEVERAGES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb76a"
+  },
+  "name": "HOSPITALITY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7aa"
+  },
+  "name": "ENVIRONMENTAL SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7cb"
+  },
+  "name": "MEDICAL DEVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7cc"
+  },
+  "name": "METALS & MINING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d3"
+  },
+  "name": "OIL & GAS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb745"
+  },
+  "name": "CONSUMER GOODS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb74a"
+  },
+  "name": "CREDIT CARDS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb74c"
+  },
+  "name": "DEFENSE & SPACE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb74e"
+  },
+  "name": "DESIGN",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb753"
+  },
+  "name": "ENTERTAINMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb796"
+  },
+  "name": "ENGINEERING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a1"
+  },
+  "name": "CHEMICALS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7bc"
+  },
+  "name": "INTERNATIONAL TRADE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c1"
+  },
+  "name": "LIFESTYLE & WELLNESS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d5"
+  },
+  "name": "OUTSOURCING & OFFSHORING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb72c"
+  },
+  "name": "AGRICULTURE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb740"
+  },
+  "name": "COMPUTER NETWORKING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb761"
+  },
+  "name": "GAMBLING & CASINOS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb77f"
+  },
+  "name": "MACHINERY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb782"
+  },
+  "name": "MARKET RESEARCH",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb788"
+  },
+  "name": "FINANCE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb78b"
+  },
+  "name": "MANUFACTURING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb791"
+  },
+  "name": "MEDIA & ENTERTAINMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb799"
+  },
+  "name": "BEAUTY & PERSONAL CARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb79b"
+  },
+  "name": "NONPROFIT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb79f"
+  },
+  "name": "AVIATION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b5"
+  },
+  "name": "HOME IMPROVEMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7cd"
+  },
+  "name": "MILITARY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7ce"
+  },
+  "name": "MUSEUMS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d6"
+  },
+  "name": "PACKAGING & CONTAINERS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7de"
+  },
+  "name": "PUBLISHING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb72b"
+  },
+  "name": "ADVERTISING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb730"
+  },
+  "name": "ART & CRAFT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb72d"
+  },
+  "name": "AIRLINES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb733"
+  },
+  "name": "AVIATION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb77b"
+  },
+  "name": "LEISURE, TRAVEL & TOURISM",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb77e"
+  },
+  "name": "LUXURY GOODS & JEWELRY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb792"
+  },
+  "name": "PHARMACEUTICALS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7bd"
+  },
+  "name": "INVESTMENT MANAGEMENT",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c2"
+  },
+  "name": "LIVESTOCK",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb73c"
+  },
+  "name": "CIVIL ENGINEERING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb744"
+  },
+  "name": "CONSUMER ELECTRONICS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb746"
+  },
+  "name": "CONSUMER SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb749"
+  },
+  "name": "CREATIVE SERVICES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb759"
+  },
+  "name": "FASHION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb787"
+  },
+  "name": "HEALTHCARE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb78a"
+  },
+  "name": "EDUCATION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb798"
+  },
+  "name": "HOSPITALITY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a6"
+  },
+  "name": "DEFENSE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7bb"
+  },
+  "name": "INSPECTION & TESTING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7ca"
+  },
+  "name": "MEDIA PRODUCTION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d7"
+  },
+  "name": "PAPER & FOREST PRODUCTS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7db"
+  },
+  "name": "PLASTICS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb743"
+  },
+  "name": "CONSULTING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb760"
+  },
+  "name": "FURNITURE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb762"
+  },
+  "name": "GARDENING & LANDSCAPING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb783"
+  },
+  "name": "MARKETING & ADVERTISING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb795"
+  },
+  "name": "CONSULTING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a0"
+  },
+  "name": "BANKING",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a7"
+  },
+  "name": "E-COMMERCE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7a8"
+  },
+  "name": "EDTECH",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7b9"
+  },
+  "name": "INDUSTRIAL AUTOMATION",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7bf"
+  },
+  "name": "LAW",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7c6"
+  },
+  "name": "MARINE",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7cf"
+  },
+  "name": "MUSIC",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d1"
+  },
+  "name": "NATURAL RESOURCES",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7d2"
+  },
+  "name": "NEWSPAPERS",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "64286b614cc3013d9bfbb7da"
+  },
+  "name": "PHOTOGRAPHY",
+  "lang": "en"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43614"
+  },
+  "name": "MEDICO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43615"
+  },
+  "name": "PAREJA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43616"
+  },
+  "name": "HONORARIOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43617"
+  },
+  "name": "SALARIO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43618"
+  },
+  "name": "ESTUDIOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43619"
+  },
+  "name": "COMIDA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4361a"
+  },
+  "name": "TRANSPORTE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4361b"
+  },
+  "name": "ALQUILER"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4361c"
+  },
+  "name": "SERVICIOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4361d"
+  },
+  "name": "IMPUESTOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4361e"
+  },
+  "name": "FACTURAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4361f"
+  },
+  "name": "COMUNICACIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43620"
+  },
+  "name": "SEGUROS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43621"
+  },
+  "name": "INVERSIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43622"
+  },
+  "name": "AHORROS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43623"
+  },
+  "name": "PRESTAMOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43624"
+  },
+  "name": "TARJETAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43625"
+  },
+  "name": "HIPOTECAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43626"
+  },
+  "name": "CREDITOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43627"
+  },
+  "name": "INTERESES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43628"
+  },
+  "name": "BANCOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43629"
+  },
+  "name": "FINANZAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4362a"
+  },
+  "name": "NEGOCIOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4362b"
+  },
+  "name": "MARKETING"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4362c"
+  },
+  "name": "PUBLICIDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4362d"
+  },
+  "name": "VENTAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4362e"
+  },
+  "name": "CLIENTES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4362f"
+  },
+  "name": "PROVEEDORES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43630"
+  },
+  "name": "INVENTARIO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43631"
+  },
+  "name": "LOGISTICA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43632"
+  },
+  "name": "PRODUCCION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43633"
+  },
+  "name": "CALIDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43634"
+  },
+  "name": "MANTENIMIENTO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43635"
+  },
+  "name": "SEGURIDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43636"
+  },
+  "name": "RECURSOS HUMANOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43637"
+  },
+  "name": "CAPACITACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43638"
+  },
+  "name": "RECLUTAMIENTO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43639"
+  },
+  "name": "SALUD OCUPACIONAL"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4363a"
+  },
+  "name": "NOMINA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4363b"
+  },
+  "name": "BENEFICIOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4363c"
+  },
+  "name": "VACACIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4363d"
+  },
+  "name": "PERMISOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4363e"
+  },
+  "name": "DESPIDOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4363f"
+  },
+  "name": "JUBILACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43640"
+  },
+  "name": "PENSIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43641"
+  },
+  "name": "INMUEBLES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43642"
+  },
+  "name": "PROPIEDADES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43643"
+  },
+  "name": "CONSTRUCCION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43644"
+  },
+  "name": "ARQUITECTURA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43645"
+  },
+  "name": "INGENIERIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43646"
+  },
+  "name": "ELECTRICIDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43647"
+  },
+  "name": "ELECTRONICA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43648"
+  },
+  "name": "TECNOLOGIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43649"
+  },
+  "name": "SOFTWARE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4364a"
+  },
+  "name": "HARDWARE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4364b"
+  },
+  "name": "INTERNET"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4364c"
+  },
+  "name": "REDES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4364d"
+  },
+  "name": "SEGURIDAD INFORMATICA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4364e"
+  },
+  "name": "BASES DE DATOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4364f"
+  },
+  "name": "SISTEMAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43650"
+  },
+  "name": "APLICACIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43651"
+  },
+  "name": "DESARROLLO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43652"
+  },
+  "name": "DISEÑO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43653"
+  },
+  "name": "ARTE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43654"
+  },
+  "name": "MUSICA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43655"
+  },
+  "name": "CINE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43656"
+  },
+  "name": "TEATRO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43657"
+  },
+  "name": "LITERATURA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43658"
+  },
+  "name": "EDUCACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43659"
+  },
+  "name": "ENSEÑANZA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4365a"
+  },
+  "name": "APRENDIZAJE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4365b"
+  },
+  "name": "IDIOMAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4365c"
+  },
+  "name": "HISTORIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4365d"
+  },
+  "name": "CIENCIAS SOCIALES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4365e"
+  },
+  "name": "PSICOLOGIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4365f"
+  },
+  "name": "FILOSOFIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43660"
+  },
+  "name": "RELIGION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43661"
+  },
+  "name": "ESPIRITUALIDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43662"
+  },
+  "name": "DEPORTES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43663"
+  },
+  "name": "EJERCICIO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43664"
+  },
+  "name": "NUTRICION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43665"
+  },
+  "name": "SALUD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43666"
+  },
+  "name": "BIENESTAR"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43667"
+  },
+  "name": "BELLEZA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43668"
+  },
+  "name": "MODA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43669"
+  },
+  "name": "ESTILO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4366a"
+  },
+  "name": "VIAJES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4366b"
+  },
+  "name": "TURISMO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4366c"
+  },
+  "name": "GASTRONOMIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4366d"
+  },
+  "name": "CULTURA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4366e"
+  },
+  "name": "EVENTOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4366f"
+  },
+  "name": "CELEBRACIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43670"
+  },
+  "name": "BODAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43671"
+  },
+  "name": "CUMPLEAÑOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43672"
+  },
+  "name": "ANIVERSARIOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43673"
+  },
+  "name": "FIESTAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43674"
+  },
+  "name": "REUNIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43675"
+  },
+  "name": "CONFERENCIAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43676"
+  },
+  "name": "SEMINARIOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43677"
+  },
+  "name": "TALLERES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43678"
+  },
+  "name": "CURSOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43679"
+  },
+  "name": "PROYECTOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4367a"
+  },
+  "name": "INNOVACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4367b"
+  },
+  "name": "INVESTIGACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4367c"
+  },
+  "name": "CIENCIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4367d"
+  },
+  "name": "TECNOLOGIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4367e"
+  },
+  "name": "MEDIO AMBIENTE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4367f"
+  },
+  "name": "ECOLOGIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43680"
+  },
+  "name": "SOSTENIBILIDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43681"
+  },
+  "name": "ENERGIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43682"
+  },
+  "name": "PETROLEO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43683"
+  },
+  "name": "GAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43684"
+  },
+  "name": "MINERIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43685"
+  },
+  "name": "AGRICULTURA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43686"
+  },
+  "name": "GANADERIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43687"
+  },
+  "name": "PESCA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43688"
+  },
+  "name": "INDUSTRIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43689"
+  },
+  "name": "COMERCIO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4368a"
+  },
+  "name": "IMPORTACIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4368b"
+  },
+  "name": "EXPORTACIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4368c"
+  },
+  "name": "ADUANAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4368d"
+  },
+  "name": "TRANSPORTE MARITIMO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4368e"
+  },
+  "name": "TRANSPORTE AEREO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4368f"
+  },
+  "name": "TRANSPORTE TERRESTRE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43690"
+  },
+  "name": "TRANSPORTE FERROVIARIO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43691"
+  },
+  "name": "TRANSPORTE URBANO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43692"
+  },
+  "name": "TRANSPORTE INTERURBANO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43693"
+  },
+  "name": "TRANSPORTE DE CARGA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43694"
+  },
+  "name": "TRANSPORTE DE PASAJEROS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43695"
+  },
+  "name": "TAXIS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43696"
+  },
+  "name": "UBER"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43697"
+  },
+  "name": "CABIFY"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43698"
+  },
+  "name": "DIDI"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b43699"
+  },
+  "name": "ENTRETENIMIENTO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4369a"
+  },
+  "name": "JUEGOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4369b"
+  },
+  "name": "VIDEOJUEGOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4369c"
+  },
+  "name": "ESPECTACULOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4369d"
+  },
+  "name": "CONCIERTOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4369e"
+  },
+  "name": "FESTIVALES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b4369f"
+  },
+  "name": "TELEVISION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a0"
+  },
+  "name": "RADIO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a1"
+  },
+  "name": "PERIODISMO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a2"
+  },
+  "name": "NOTICIAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a3"
+  },
+  "name": "ACTUALIDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a4"
+  },
+  "name": "POLITICA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a5"
+  },
+  "name": "ECONOMIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a6"
+  },
+  "name": "SOCIEDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a7"
+  },
+  "name": "CINE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a8"
+  },
+  "name": "TEATRO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436a9"
+  },
+  "name": "MUSEOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436aa"
+  },
+  "name": "GALERIAS DE ARTE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436ab"
+  },
+  "name": "LIBROS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436ac"
+  },
+  "name": "REVISTAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436ad"
+  },
+  "name": "PUBLICACIONES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436ae"
+  },
+  "name": "MARKETING DIGITAL"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436af"
+  },
+  "name": "PUBLICIDAD ONLINE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b0"
+  },
+  "name": "REDES SOCIALES"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b1"
+  },
+  "name": "SEO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b2"
+  },
+  "name": "SEM"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b3"
+  },
+  "name": "EMAIL MARKETING"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b4"
+  },
+  "name": "MARKETING DE CONTENIDOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b5"
+  },
+  "name": "MARKETING DE AFILIACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b6"
+  },
+  "name": "MARKETING DE INFLUENCIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b7"
+  },
+  "name": "MARKETING DE EXPERIENCIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b8"
+  },
+  "name": "MARKETING DE EVENTOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436b9"
+  },
+  "name": "MARKETING DE PRODUCTOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436ba"
+  },
+  "name": "MARKETING DE SERVICIOS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436bb"
+  },
+  "name": "MARKETING DEPORTIVO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436bc"
+  },
+  "name": "MARKETING TURISTICO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436bd"
+  },
+  "name": "MARKETING GASTRONOMICO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436be"
+  },
+  "name": "MARKETING CULTURAL"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436bf"
+  },
+  "name": "MARKETING DE LUJO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c0"
+  },
+  "name": "MARKETING B2B"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c1"
+  },
+  "name": "MARKETING B2C"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c2"
+  },
+  "name": "MARKETING MULTINIVEL"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c3"
+  },
+  "name": "MARKETING DE NETWORKING"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c4"
+  },
+  "name": "MARKETING DE RETAIL"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c5"
+  },
+  "name": "MARKETING DE MODA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c6"
+  },
+  "name": "MARKETING DE BELLEZA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c7"
+  },
+  "name": "MARKETING DEPORTIVO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c8"
+  },
+  "name": "MARKETING DE ENTRETENIMIENTO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436c9"
+  },
+  "name": "MARKETING DE SALUD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436ca"
+  },
+  "name": "MARKETING DE BIENESTAR"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436cb"
+  },
+  "name": "MARKETING DE EDUCACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436cc"
+  },
+  "name": "MARKETING DE TECNOLOGIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436cd"
+  },
+  "name": "MARKETING DE INNOVACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436ce"
+  },
+  "name": "MARKETING DE INVESTIGACION"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436cf"
+  },
+  "name": "MARKETING DE CIENCIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436d0"
+  },
+  "name": "MARKETING DE MEDIO AMBIENTE"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436d1"
+  },
+  "name": "MARKETING DE SOSTENIBILIDAD"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436d2"
+  },
+  "name": "MARKETING DE ENERGIA"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436d3"
+  },
+  "name": "MARKETING DE PETROLEO"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436d4"
+  },
+  "name": "MARKETING DE GAS"
+},{
+  "_id": {
+    "$oid": "6457322a30ee4deba0b436d5"
+  },
+  "name": "OTROS"
+}]
