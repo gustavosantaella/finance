@@ -15,8 +15,9 @@ class RegisterController extends ApiController
     {
 
         try {
+            $this->req()->get("password");
             return $this->response(
-                [],
+                $this->req()->all(),
             );
         } catch (Exception $e) {
             return $this->response($e);
