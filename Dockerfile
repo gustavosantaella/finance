@@ -1,11 +1,7 @@
 FROM richarvey/nginx-php-fpm:2.0.4
 FROM php:8.0.0RC5-fpm-alpine3.12
 
-# Install dependencies
-RUN apt-get update && apt-get install -y \
-    curl \
-    libzip-dev \
-    unzip
+
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
