@@ -21,5 +21,5 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # RUN chmod +rx /start.sh
 
-CMD "chmod +x ./start.sh"
+CMD "chmod +rx ./start.sh"
 CMD "./start.sh"
