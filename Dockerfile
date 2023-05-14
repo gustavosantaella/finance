@@ -20,6 +20,6 @@ ENV LOG_CHANNEL stderr
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # RUN chmod +rx /start.sh
-RUN "chmod +x ./start.sh"
 
+CMD "chmod +x ./start.sh"
 CMD "./start.sh"
