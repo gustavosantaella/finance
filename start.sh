@@ -9,5 +9,7 @@ php artisan config:cache
 echo "Caching routes..."
 php artisan route:cache
 
+echo "Running app"
+php artisan serve --host 0.0.0.0 --port 10000
 # echo "Running migrations..."
 # php artisan migrate --force
