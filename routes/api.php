@@ -20,3 +20,7 @@ Route::group([
 ], function(){
     Route::post("/register", [RegisterController::class, 'register']);
 });
+
+Route::get('/health', function(){
+    return true;
+});
