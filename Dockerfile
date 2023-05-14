@@ -1,6 +1,6 @@
 FROM richarvey/nginx-php-fpm:2.0.4
 # Use the official PHP image as the base image
-FROM php:8.1-fpm-alpine
+# FROM php:8.1-fpm-alpine
 
 COPY . .
 
@@ -21,4 +21,4 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # RUN chmod +rx /start.sh
 
-CMD ["php", "artisan" ,"serve" ,"--host=0.0.0.0",  "--port=10000"]
+CMD ["chmod", "+rx", "./start.sh", "./start.sh"]
