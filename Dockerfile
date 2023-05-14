@@ -2,7 +2,6 @@ FROM richarvey/nginx-php-fpm:2.0.4
 # Use the official PHP image as the base image
 FROM php:8.1-fpm-alpine
 
-RUN apt-get install bash
 COPY . .
 
 # Image config
