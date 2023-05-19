@@ -4,7 +4,7 @@
   "description": "backend",
   "main": "main.py",
   "scripts": {
-    "start:dev":"uvicorn main:app --reload",
+    "start:dev":"uvicorn main:app --reload --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
