@@ -32,19 +32,24 @@ class UserService extends Service
     public function newUser(String $email, String $password, String $country)
     {
         try {
-            $this->findByEmail($email);
-            return null;
-        } catch (Exception $e) {
-            try {
-                $passwordHasshed = Hash::make($password);
-                $country = $this->countryService->getByNames($country);
-
-                $user = $this->userRepo->create($email, $passwordHasshed, ['customer']);
-
-                return $user;
-            } catch (Exception $e) {
-                throw $e;
+            $user =  $this->findByEmail($email);
+            if($user){
+                throw new Exception("Email already exists");
             }
+        } catch (Exception $e) {
+            throw $e;
+        }
+
+        try {
+            $passwordHasshed = Hash::make($password);
+            $country = $this->countryService->getByNames($country);
+
+            $user = $this->userRepo->create($email, $passwordHasshed, ['customer']);
+
+
+            return $user;
+        } catch (Exception $e) {
+            throw $e;
         }
     }
 }
