@@ -20,7 +20,7 @@ class ApiController extends Controller {
             unset($aux_data['data']);
         }
 
-        $a = response($aux_data, $aux_data['status'], $headers);
-        return $a;
+        $response = response($aux_data, $aux_data['status'], $headers);
+        return $response;
     }
 }

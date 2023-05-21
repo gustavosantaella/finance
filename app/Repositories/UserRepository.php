@@ -17,7 +17,7 @@ class UserRepository
         return $this->user->all();
     }
 
-    public function getByEmail(String $email) : ?User {
+    public function getByEmail(String &$email) : ?User {
         return $this->user->where('email', $email)->first();
     }
 

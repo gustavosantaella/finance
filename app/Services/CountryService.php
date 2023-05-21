@@ -14,6 +14,6 @@ class CountryService extends Service
 
     public function getByNames(String $name): ?Array {
 
-        return $this->countryRepository->getByNameOrIso($name)->toArray();
+        return $this->countryRepository->getByNameOrIso($name)?->toArray() ?? throw new Exception('Country not found');
     }
 }

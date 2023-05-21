@@ -10,14 +10,19 @@ class WalletRepository{
         private Wallet $model
     ){}
 
-    public function create($name, $owner, $currency){
+    public function create(string $owner, string $currency){
+        $walletId  = now()->timestamp;
         return $this->model->create([
             "members" => [],
-            "name" => $name,
-            "walletId" => now()->timestamp,
-            "owner" => new ObjectID($owner),
+            "name" => $walletId,
+            "walletId" => $walletId,
+            "owner" => new ObjectId($owner),
             "balance" => 0,
             "currency" => $currency
         ]);
+    }
+
+    public function existWalletByCurrency(string $owner, string $currency){
+        return $this->model->where('owner', new ObjectId($owner))->where('currency', $currency)->exists();
     }
 }
