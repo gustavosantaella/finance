@@ -10,8 +10,7 @@ class AuthController extends ApiController
 {
     public function __construct(
         private UserService $userService
-    )
-    {
+    ) {
     }
     public function register()
     {
@@ -28,8 +27,12 @@ class AuthController extends ApiController
 
     public function login()
     {
+        $this->req()->validate([
+            "email" => ['email', 'required'],
+            'password' => ['required', 'min:8']
+        ]);
+        ['email' => $email, 'password' => $password] = $this->req()->toArray();
         try {
-            ['email' => $email, 'password' => $password] = $this->req()->toArray();
             $response = $this->userService->login($email, $password);
             return $this->response(
                 $response,

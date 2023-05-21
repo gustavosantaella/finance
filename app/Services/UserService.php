@@ -10,15 +10,30 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
+
 class UserService extends Service
 {
-    public function __construct(
+    /**
+     * Init services and repositories
+     *
+     * @param UserRepository $userRepo
+     * @param CountryService $countryService
+     * @param WalletService $walletService
+     */
+   public function __construct(
         private UserRepository $userRepo,
         private CountryService $countryService,
         private WalletService $walletService
     ) {
     }
-    public function findByEmail(String &$email, bool $ignoreThrow = false)
+    /**
+     * Find user by email
+     *
+     * @param string $email
+     * @param boolean $ignoreThrow
+     * @return object
+     */
+    public function findByEmail(string &$email, bool $ignoreThrow = false)
     {
         try {
             $user = $this->userRepo->getByEmail($email);
@@ -32,7 +47,15 @@ class UserService extends Service
         }
     }
 
-    public function newUser(String $email, String $password, String $country)
+    /**
+     * Create a new user
+     *
+     * @param string $email
+     * @param string $password
+     * @param string $country
+     * @return bool
+     */
+    public function newUser(string $email, string $password, string $country)
     {
         try {
              $user =  $this->findByEmail($email, true);
@@ -51,17 +74,25 @@ class UserService extends Service
         }
     }
 
-    public function login($email, $password){
+    /**
+     * Authenticate a user by email and password
+     *
+     * @param string $email
+     * @param string $password
+     * @return array
+     */
+    public function login(string $email, string $password){
         try{
             $user = $this->findByEmail($email);
             $passwordHashed = $user->password;
-            if(Hash::check($password, $passwordHashed)){
-                Log::write($password);
+            if(!Hash::check($password, $passwordHashed)){
+                throw new Exception('Invalid credentials');
+
+            }
+            Log::write($password);
                 $token = Auth::guard('api')->attempt(['email' => $email, 'password' => $password]);
                 $userId = $user->id;
                 return compact('token','user', 'userId');
-
-            }
         }catch(Exception $e){
             throw $e;
         }

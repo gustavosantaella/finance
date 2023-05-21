@@ -13,7 +13,6 @@ class CountryController extends ApiController
     public function __construct(
         private CountryService $countryService
     ){}
-   //  Methods
 
    public function getAll(){
     try{
