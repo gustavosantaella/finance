@@ -3,10 +3,9 @@
 namespace App\Services;
 
 use App\Services\Service;
-
-use Illuminate\Database\Eloquent\Model;
+use Exception;
 
 class {{ class }} extends Service
 {
-    //
+    public function __construct(){}
 }

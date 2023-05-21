@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 
-class {{ class }} extends MongoModel
-{
+class {{ class }}{
+
+    public function __construct(){}
 }
