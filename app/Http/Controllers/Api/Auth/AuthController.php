@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Api\ApiController;
-use App\Repositories\UserRepository;
 use App\Services\UserService;
 use Exception;
 

@@ -11,10 +11,15 @@ class CountryRepository
     ){}
 
     public function getAll(){
-        return $this->model->all()->sortBy('name')->toArray();
+        return $this->model->orderBy('name', 'asc')->get();
     }
 
     public function getByNameOrIso(String $name): ?Country{
         return $this->model->where('name', $name)->orWhere('iso2', $name)->orWhere('iso3', $name)->first();
+    }
+
+    public function getAllNames(){
+        return $this->model->orderBy('name', 'asc')->pluck('name');
+
     }
 }

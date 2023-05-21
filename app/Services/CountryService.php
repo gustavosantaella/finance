@@ -16,4 +16,12 @@ class CountryService extends Service
 
         return $this->countryRepository->getByNameOrIso($name)?->toArray() ?? throw new Exception('Country not found');
     }
+
+    public function getAll(){
+        try{
+            return $this->countryRepository->getAllNames();
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
 }

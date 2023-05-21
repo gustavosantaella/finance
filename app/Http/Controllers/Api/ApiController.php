@@ -9,8 +9,8 @@ class ApiController extends Controller {
     protected function response( $data, int $status = 200, Array $headers = []){
         $aux_data = [
             "ok" => 'OK',
+            "status" => $status,
             "data" => $data,
-            "status" => $status
         ];
 
         if ( $data instanceof Exception){
