@@ -8,5 +8,10 @@ class Wallet extends BaseMongoModel
 
     protected $guarded = [];
 
+    protected $casts = [
+        "name" => "string",
+        "walletId" => "string"
+    ];
+
 
 }

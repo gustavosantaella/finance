@@ -13,6 +13,8 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthMiddleware extends ApiController
 {
+    public function __construct(){}
+
     /**
      * Handle an incoming request.
      *
@@ -27,7 +29,7 @@ class AuthMiddleware extends ApiController
         }
         $content_array = explode(' ', $token);
         if(count($content_array) < 2){
-            throw new Exception("Authorization token must be 2 elements");
+            throw new Exception("Authorization token must have 2 elements");
         }
         $token = $content_array[count($content_array) - 1];
         JWTAuth::parseToken()->authenticate();

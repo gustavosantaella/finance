@@ -5,8 +5,10 @@ use App\Helpers\Log;
 use App\Http\Controllers\Controller;
 use Exception;
 
+
 class ApiController extends Controller {
 
+    public function __construct(){}
     protected function response( $data, int $status = 200, Array $headers = []){
         $aux_data = [
             "ok" => 'OK',
@@ -24,4 +26,5 @@ class ApiController extends Controller {
         $response = response($aux_data, $aux_data['status'], $headers);
         return $response;
     }
+
 }

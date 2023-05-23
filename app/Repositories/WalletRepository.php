@@ -25,4 +25,12 @@ class WalletRepository{
     public function existWalletByCurrency(string $owner, string $currency){
         return $this->model->where('owner', new ObjectId($owner))->where('currency', $currency)->exists();
     }
+
+    public function walletsByOwner(string $owner){
+        return $this->model->where('owner', new ObjectId($owner))->get();
+    }
+
+    public function findOne(string $walletId){
+        return $this->model->find($walletId);
+    }
 }

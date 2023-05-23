@@ -29,4 +29,27 @@ class WalletService extends Service
             throw $e;
         }
     }
+
+    public function getByOwner(string $owner): array {
+        try{
+            $wallets = $this->walletRepository->walletsByOwner($owner)->toArray();
+            return $wallets;
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+
+    public function getBalance(string $walletId){
+        try{
+            $incomes = 0;
+            $expenses = 0;
+            $balance = 0;
+            $wallet = $this->walletRepository->findOne($walletId);
+            return [
+                "info" => $wallet
+            ];
+        }catch(Exception $e){
+             throw $e;
+        }
+    }
 }
