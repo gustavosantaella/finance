@@ -10,7 +10,7 @@ use Exception;
 class WalletService extends Service
 {
     public function __construct(
-        private WalletRepository $walletRepository
+        private WalletRepository $walletRepository,
     ) {
     }
 
