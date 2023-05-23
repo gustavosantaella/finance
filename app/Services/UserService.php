@@ -20,7 +20,7 @@ class UserService extends Service
      * @param CountryService $countryService
      * @param WalletService $walletService
      */
-   public function __construct(
+    public function __construct(
         private UserRepository $userRepo,
         private CountryService $countryService,
         private WalletService $walletService
@@ -58,8 +58,8 @@ class UserService extends Service
     public function newUser(string $email, string $password, string $country)
     {
         try {
-             $user =  $this->findByEmail($email, true);
-            if($user){
+            $user =  $this->findByEmail($email, true);
+            if ($user) {
                 throw new Exception("Email already exists");
             }
             $passwordHasshed = Hash::make($password);
@@ -81,19 +81,19 @@ class UserService extends Service
      * @param string $password
      * @return array
      */
-    public function login(string $email, string $password){
-        try{
+    public function login(string $email, string $password)
+    {
+        try {
             $user = $this->findByEmail($email);
             $passwordHashed = $user->password;
-            if(!Hash::check($password, $passwordHashed)){
+            if (!Hash::check($password, $passwordHashed)) {
                 throw new Exception('Invalid credentials');
-
             }
-            Log::write($password);
-                $token = Auth::guard('api')->attempt(['email' => $email, 'password' => $password]);
-                $userId = $user->id;
-                return compact('token','user', 'userId');
-        }catch(Exception $e){
+            $token = JWTAuth::attempt(['email' => $email, 'password' => $password]);
+
+            $userId = $user->id;
+            return compact('token', 'user', 'userId');
+        } catch (Exception $e) {
             throw $e;
         }
     }

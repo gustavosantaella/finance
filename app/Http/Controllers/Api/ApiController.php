@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\Log;
 use App\Http\Controllers\Controller;
 use Exception;
 
@@ -16,7 +17,7 @@ class ApiController extends Controller {
         if ( $data instanceof Exception){
             $aux_data['ok'] = 'error';
             $aux_data['status'] = in_array($status,config()->get('definitions.http.statusCodes.error')) ?  $status : 400;
-            $aux_data['message'] =  $data instanceof Exception ? $data->getMessage() : $data;
+            $aux_data['message'] =  $data->getMessage();
             unset($aux_data['data']);
         }
 

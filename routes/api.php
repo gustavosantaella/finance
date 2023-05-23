@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CountryController;
+use App\Http\Middleware\Api\AuthMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +26,8 @@ Route::group([
 });
 
 Route::group([
-    'prefix'=>'categories'
+    'prefix'=>'categories',
+    'middleware' =>  'api.auth:customer,admin'
 ], function(){
     Route::get("/", [CategoryController::class, 'getAll']);
 });
