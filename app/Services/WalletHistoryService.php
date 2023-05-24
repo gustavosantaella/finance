@@ -18,8 +18,8 @@ class WalletHistoryService extends Service
     public function history(string $walletId){
         try{
 
-            $history = $this->walletRepository->history($walletId);
-            return $history;
+            $a = $this->walletRepository->history($walletId);
+            return $a;
         }catch(Exception $e){
             throw $e;
         }

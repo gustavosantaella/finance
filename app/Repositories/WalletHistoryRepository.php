@@ -28,4 +28,8 @@ class WalletHistoryRepository{
             "description" => array_key_exists('description', $payload) ? $payload['description'] : ''
         ]);
     }
+
+    public function getByWallet(string $walletId){
+        return $this->model->where("walletId", new ObjectId($walletId))->get();
+    }
 }

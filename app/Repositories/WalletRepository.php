@@ -35,6 +35,26 @@ class WalletRepository{
     }
 
     public function history(string $walletId){
-        return $this->findOne($walletId)->load('history');
+        // return $this->findOne($walletId)->load('history'); shloud be so
+        return $this->model->raw(function ($collection) use ($walletId) {
+            return $collection->aggregate(
+                [
+                    [
+                        '$match' => [
+                            "_id" => new ObjectId($walletId)
+                        ]
+                    ],
+                    [
+
+                        '$lookup' => [
+                            'from' => 'wallet_history',
+                            'foreignField' => 'walletId',
+                            'localField' => '_id',
+                            'as' => 'history',
+                        ]
+                    ]
+                ]
+            );
+        });
     }
 }
