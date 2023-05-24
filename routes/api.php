@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CountryController;
 use App\Http\Controllers\Api\WalletController;
+use App\Http\Controllers\Api\WalletHistoryController;
 use App\Http\Middleware\Api\AuthMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,12 @@ Route::group([
 ], function(){
     Route::get("/by-owner", [WalletController::class, 'byOwner']);
     Route::get("/{walletId}", [WalletController::class, 'balance']);
+    Route::group([
+        'prefix'=>'history',
+    ], function(){
+        Route::get("/{walletId}", [WalletHistoryController::class, 'getHistory']);
+        Route::post("/", [WalletHistoryController::class, 'add']);
+    });
 });
 
 Route::group([

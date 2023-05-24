@@ -33,4 +33,8 @@ class WalletRepository{
     public function findOne(string $walletId){
         return $this->model->find($walletId);
     }
+
+    public function history(string $walletId){
+        return $this->findOne($walletId)->load('history');
+    }
 }

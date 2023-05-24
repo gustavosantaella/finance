@@ -3,11 +3,15 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Helpers\Log;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
+use MongoDB\BSON\ObjectId;
 
 class User extends Authenticatable  implements JWTSubject
 {
@@ -50,4 +54,5 @@ class User extends Authenticatable  implements JWTSubject
     {
         return [];
     }
+
 }
