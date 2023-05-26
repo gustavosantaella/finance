@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\Log;
 use App\Http\Controllers\Api\ApiController;
 use App\Repositories\WalletRepository;
 use App\Services\WalletHistoryService;

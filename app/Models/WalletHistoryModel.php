@@ -13,6 +13,11 @@ class WalletHistoryModel extends BaseMongoModel
     protected $casts = [
         "createdBy._id" => 'string'
     ];
+
+    // relations
+    public function categories(){
+        return $this->hasOne(Category::class, '_id', "categoryId");
+    }
     protected function setCreatedByAttribute(array $value){
         $this->attributes['createdBy']  = [
             ...$value,

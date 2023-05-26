@@ -4,13 +4,17 @@ namespace App\Repositories;
 
 use App\Models\Wallet;
 use MongoDB\BSON\ObjectId;
-class WalletRepository{
+
+class WalletRepository
+{
 
     public function __construct(
         private Wallet $model
-    ){}
+    ) {
+    }
 
-    public function create(string $owner, string $currency){
+    public function create(string $owner, string $currency)
+    {
         $walletId  = now()->timestamp;
         return $this->model->create([
             "members" => [],
@@ -22,39 +26,19 @@ class WalletRepository{
         ]);
     }
 
-    public function existWalletByCurrency(string $owner, string $currency){
+    public function existWalletByCurrency(string $owner, string $currency)
+    {
         return $this->model->where('owner', new ObjectId($owner))->where('currency', $currency)->exists();
     }
 
-    public function walletsByOwner(string $owner){
+    public function walletsByOwner(string $owner)
+    {
         return $this->model->where('owner', new ObjectId($owner))->get();
     }
 
-    public function findOne(string $walletId){
+    public function findOne(string $walletId)
+    {
         return $this->model->find($walletId);
     }
 
-    public function history(string $walletId){
-        // return $this->findOne($walletId)->load('history'); shloud be so
-        return $this->model->raw(function ($collection) use ($walletId) {
-            return $collection->aggregate(
-                [
-                    [
-                        '$match' => [
-                            "_id" => new ObjectId($walletId)
-                        ]
-                    ],
-                    [
-
-                        '$lookup' => [
-                            'from' => 'wallet_history',
-                            'foreignField' => 'walletId',
-                            'localField' => '_id',
-                            'as' => 'history',
-                        ]
-                    ]
-                ]
-            );
-        });
-    }
 }

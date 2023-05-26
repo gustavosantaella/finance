@@ -30,6 +30,6 @@ class WalletHistoryRepository{
     }
 
     public function getByWallet(string $walletId){
-        return $this->model->where("walletId", new ObjectId($walletId))->get();
+        return $this->model->with('categories')->where("walletId", new ObjectId($walletId))->get();
     }
 }
