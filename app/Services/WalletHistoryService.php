@@ -11,9 +11,9 @@ use Exception;
 
 class WalletHistoryService extends Service
 {
-    private float $total = 0.0;
-    private float $incomes = 0.0;
-    private float $expenses = 0.0;
+    private string $total = '0.0';
+    private string $incomes = '0.0';
+    private string $expenses = '0.0';
     public function __construct(
         private WalletHistoryRepository $walletHistoryRepository,
         private WalletRepository $walletRepository
@@ -24,9 +24,9 @@ class WalletHistoryService extends Service
         $getHistoryValue = fn (string $type) => array_map(function ($item) use ($type) {
             return $item['type'] == $type ? $item['value'] : 0;
         }, collect($history)->toArray());
-        $this->incomes = floatval(number_format(array_sum($getHistoryValue('income')), 2));
-        $this->expenses = floatval(number_format(array_sum($getHistoryValue('expense')), 2));
-        $this->total = floatval(number_format($this->incomes + $this->expenses,2));
+        $this->incomes = (number_format(array_sum($getHistoryValue('income')), 2, '.', ''));
+        $this->expenses = number_format(array_sum($getHistoryValue('expense')),2, '.', '');
+        $this->total = (number_format((float)$this->incomes + (float)$this->expenses,2, '.', ''));
     }
     public function history(string $walletId, $month = null)
     {
@@ -42,7 +42,7 @@ class WalletHistoryService extends Service
                 "total" => $this->total,
                 "walletId" => $walletId,
                 "history" => $history,
-                "balance" => $this->incomes - $this->expenses
+                "balance" =>(float) $this->incomes - (float)$this->expenses
             ];
         } catch (Exception $e) {
             throw $e;
@@ -72,6 +72,9 @@ class WalletHistoryService extends Service
 
     public function metricsFromArrayHistory(array $history)
     {
+        $total = (float) $this->total;
+        $incomes = (float) $this->incomes;
+        $expenses = (float) $this->expenses;
         $metrics = [
             "incomes" => 0.0,
             "expenses" => 0.0,
@@ -83,8 +86,8 @@ class WalletHistoryService extends Service
 
         ];
 
-        $metrics['incomes'] =  !($this->total < 1)  ? number_format($this->incomes / $this->total * 100, 2) : 0.0;
-        $metrics['expenses'] =   !($this->total < 1)  ?number_format($this->expenses / $this->total * 100, 2) : 0.0;
+        $metrics['incomes'] =  !($total < 1)  ? floatval(number_format($incomes / $total * 100, 2, '.', '')) : 0.0;
+        $metrics['expenses'] =   !($total < 1)  ?floatval(number_format($expenses / $total * 100, 2, '.', '')) : 0.0;
         $carbon = new Carbon();
         $historyByDate = array_map(function ($item) use ($carbon) {
             return [
@@ -96,19 +99,19 @@ class WalletHistoryService extends Service
 
         foreach ($historyByDate as $value) {
             $key1 = array_search($value['dateName'], array_column($barChartResult, 'dateName'));
-            $getValueByType = fn (string $type) => $value['type'] == $type ? number_format($value['value'],2) : 0.0;
+            $getValueByType = fn (string $type) => $value['type'] == $type ? floatval(number_format($value['value'],2, '.', '')) : 0.0;
             $incomes = $getValueByType('income');
             $expenses = $getValueByType('expense');
             if (isset($key1) && $key1 > -1) {
                 $index = array_search($value['dateName'], array_column($barChartResult, 'dateName'));
-                $barChartResult[$index]['income'] += number_format($incomes,2);
-                $barChartResult[$index]['expense'] += number_format($expenses, 2);
+                $barChartResult[$index]['income'] += floatval(number_format($incomes,2, '.', ''));
+                $barChartResult[$index]['expense'] += floatval(number_format($expenses, 2, '.', ''));
             } else {
                 $barChartResult[] = [
                     "date" => $value['created_at'],
                     "dateName" => $value['dateName'],
-                    "income" => floatval(number_format($incomes, 2)),
-                    "expense" => floatval(number_format($expenses, 2)),
+                    "income" => floatval(floatval(number_format($incomes, 2, '.', ''))),
+                    "expense" => floatval(floatval(number_format($expenses, 2, '.', ''))),
                 ];
             }
         }
@@ -120,7 +123,7 @@ class WalletHistoryService extends Service
             $category = $value['categories']['name'];
             $type = $value['type'];
             $auxType = $value['type'] === 'income' ? 'incomes' : 'expenses';
-            $valueMovement = number_format($value['value'], 2);
+            $valueMovement = floatval(number_format($value['value'], 2));
             if (count($pierchartResult[$auxType]) > 0) {
                 $filtered = collect(array_filter($pierchartResult[$auxType], function ($item) use ($category, $type) {
                     if ($item['category'] == $category && $item['type'] == $type) {
@@ -133,20 +136,20 @@ class WalletHistoryService extends Service
                 if (count($filtered) > 0) {
                     $index = array_search($filtered, $pierchartResult[$auxType]);
 
-                    $pierchartResult[$auxType][$index]['value'] += number_format($valueMovement,2);
+                    $pierchartResult[$auxType][$index]['value'] += floatval(number_format($valueMovement,2, '.', ''));
                 } else {
                     if ($value['type'] == 'income') {
                         $pierchartResult['incomes'][] = [
                             "category" => $category,
                             "type" => $type,
-                            "value" => number_format($valueMovement,2)
+                            "value" => floatval(number_format($valueMovement,2, '.', ''))
                         ];
                     } else {
 
                             array_push($pierchartResult[$auxType], [
                                 "category" => $category,
                                 "type" => $type,
-                                "value" => number_format($valueMovement,2)
+                                "value" => floatval(number_format($valueMovement,2, '.', ''))
                             ]);
 
                     }
@@ -156,17 +159,23 @@ class WalletHistoryService extends Service
                     $pierchartResult['incomes'][] = [
                         "category" => $category,
                         "type" => $type,
-                        "value" => number_format($valueMovement,2)
+                        "value" => floatval(number_format($valueMovement,2, '.', ''))
                     ];
                 } else {
                     $pierchartResult['expenses'][] = [
                         "category" => $category,
                         "type" => $type,
-                        "value" => number_format($valueMovement,2)
+                        "value" => floatval(number_format($valueMovement,2, '.', ''))
                     ];
                 }
             }
         }
+        // $pierchartResult['incomes'] = array_map(function($item){
+        //     return[
+        //         ...$item,
+        //         "value" => 2
+        //     ];
+        // },$pierchartResult['incomes']);
         $metrics['barchart'] = $barChartResult;
         $metrics['piechart'] = $pierchartResult;
         return $metrics;
