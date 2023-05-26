@@ -11,6 +11,7 @@ class WalletService extends Service
 {
     public function __construct(
         private WalletRepository $walletRepository,
+        private WalletHistoryService $walletHistoryService
     ) {
     }
 
@@ -43,9 +44,14 @@ class WalletService extends Service
         try{
             $incomes = 0;
             $expenses = 0;
-            $balance = 0;
             $wallet = $this->walletRepository->findOne($walletId);
+            $this->walletHistoryService->getTypesValues($incomes, $expenses, $walletId);
+            $balance = $incomes - $expenses;
             return [
+                "balance" => $balance,
+                "expenses" => $expenses,
+                "incomes" => $incomes,
+                "growthRate" => 0,
                 "info" => $wallet
             ];
         }catch(Exception $e){

@@ -20,17 +20,20 @@ class WalletHistoryService extends Service
     ) {
     }
 
+    public function financialvalues($history){
+        $getHistoryValue = fn (string $type) => array_map(function ($item) use ($type) {
+            return $item['type'] == $type ? $item['value'] : 0;
+        }, collect($history)->toArray());
+        $this->incomes = array_sum($getHistoryValue('income'));
+        $this->expenses = array_sum($getHistoryValue('expense'));
+        $this->total = $this->incomes + $this->expenses;
+    }
     public function history(string $walletId)
     {
         try {
 
             $history = $this->walletHistoryRepository->getByWallet($walletId);
-            $getHistoryValue = fn (string $type) => array_map(function ($item) use ($type) {
-                return $item['type'] == $type ? $item['value'] : 0;
-            }, collect($history)->toArray());
-            $this->incomes = array_sum($getHistoryValue('income'));
-            $this->expenses = array_sum($getHistoryValue('expense'));
-            $this->total = $this->incomes + $this->expenses;
+            $this->financialvalues($history);
             $metrics = $this->metricsFromArrayHistory(collect($history)->toArray());
             return [
                 "metrics" => $metrics,
@@ -38,7 +41,8 @@ class WalletHistoryService extends Service
                 "expenses" => $this->expenses,
                 "total" => $this->total,
                 "walletId" => $walletId,
-                "history" => $history
+                "history" => $history,
+                "balance" => $this->incomes - $this->expenses
             ];
         } catch (Exception $e) {
             throw $e;
@@ -55,7 +59,16 @@ class WalletHistoryService extends Service
         }
     }
 
-
+    public function getTypesValues(&$incomes, &$expenses, $walletId){
+        try{
+             $history = $this->walletHistoryRepository->getByWallet($walletId);
+             $this->financialvalues($history);
+             $incomes = $this->incomes;
+             $expenses = $this->expenses;
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
 
     public function metricsFromArrayHistory(array $history)
     {
