@@ -12,8 +12,8 @@ use Exception;
 class WalletHistoryService extends Service
 {
     private float $total = 0.0;
-    private $incomes = 0.0;
-    private $expenses = 0.0;
+    private float $incomes = 0.0;
+    private float $expenses = 0.0;
     public function __construct(
         private WalletHistoryRepository $walletHistoryRepository,
         private WalletRepository $walletRepository
@@ -24,15 +24,15 @@ class WalletHistoryService extends Service
         $getHistoryValue = fn (string $type) => array_map(function ($item) use ($type) {
             return $item['type'] == $type ? $item['value'] : 0;
         }, collect($history)->toArray());
-        $this->incomes = array_sum($getHistoryValue('income'));
-        $this->expenses = array_sum($getHistoryValue('expense'));
-        $this->total = $this->incomes + $this->expenses;
+        $this->incomes = floatval(number_format(array_sum($getHistoryValue('income')), 2));
+        $this->expenses = floatval(number_format(array_sum($getHistoryValue('expense')), 2));
+        $this->total = floatval(number_format($this->incomes + $this->expenses,2));
     }
-    public function history(string $walletId)
+    public function history(string $walletId, $month = null)
     {
         try {
 
-            $history = $this->walletHistoryRepository->getByWallet($walletId);
+            $history = $this->walletHistoryRepository->getByWallet($walletId, $month);
             $this->financialvalues($history);
             $metrics = $this->metricsFromArrayHistory(collect($history)->toArray());
             return [
@@ -83,8 +83,8 @@ class WalletHistoryService extends Service
 
         ];
 
-        $metrics['incomes'] =  round($this->incomes / $this->total * 100, 2);
-        $metrics['expenses'] =  round($this->expenses / $this->total * 100, 2);
+        $metrics['incomes'] =  !($this->total < 1)  ? number_format($this->incomes / $this->total * 100, 2) : 0.0;
+        $metrics['expenses'] =   !($this->total < 1)  ?number_format($this->expenses / $this->total * 100, 2) : 0.0;
         $carbon = new Carbon();
         $historyByDate = array_map(function ($item) use ($carbon) {
             return [
@@ -96,19 +96,19 @@ class WalletHistoryService extends Service
 
         foreach ($historyByDate as $value) {
             $key1 = array_search($value['dateName'], array_column($barChartResult, 'dateName'));
-            $getValueByType = fn (string $type) => $value['type'] == $type ? $value['value'] : 0;
+            $getValueByType = fn (string $type) => $value['type'] == $type ? number_format($value['value'],2) : 0.0;
             $incomes = $getValueByType('income');
             $expenses = $getValueByType('expense');
             if (isset($key1) && $key1 > -1) {
                 $index = array_search($value['dateName'], array_column($barChartResult, 'dateName'));
-                $barChartResult[$index]['income'] += $incomes;
-                $barChartResult[$index]['expense'] += $expenses;
+                $barChartResult[$index]['income'] += number_format($incomes,2);
+                $barChartResult[$index]['expense'] += number_format($expenses, 2);
             } else {
                 $barChartResult[] = [
                     "date" => $value['created_at'],
                     "dateName" => $value['dateName'],
-                    "income" => $incomes,
-                    "expense" => $expenses,
+                    "income" => floatval(number_format($incomes, 2)),
+                    "expense" => floatval(number_format($expenses, 2)),
                 ];
             }
         }
@@ -120,7 +120,7 @@ class WalletHistoryService extends Service
             $category = $value['categories']['name'];
             $type = $value['type'];
             $auxType = $value['type'] === 'income' ? 'incomes' : 'expenses';
-            $valueMovement = $value['value'];
+            $valueMovement = number_format($value['value'], 2);
             if (count($pierchartResult[$auxType]) > 0) {
                 $filtered = collect(array_filter($pierchartResult[$auxType], function ($item) use ($category, $type) {
                     if ($item['category'] == $category && $item['type'] == $type) {
@@ -133,20 +133,20 @@ class WalletHistoryService extends Service
                 if (count($filtered) > 0) {
                     $index = array_search($filtered, $pierchartResult[$auxType]);
 
-                    $pierchartResult[$auxType][$index]['value'] += $valueMovement;
+                    $pierchartResult[$auxType][$index]['value'] += number_format($valueMovement,2);
                 } else {
                     if ($value['type'] == 'income') {
                         $pierchartResult['incomes'][] = [
                             "category" => $category,
                             "type" => $type,
-                            "value" => $valueMovement
+                            "value" => number_format($valueMovement,2)
                         ];
                     } else {
 
                             array_push($pierchartResult[$auxType], [
                                 "category" => $category,
                                 "type" => $type,
-                                "value" => $valueMovement
+                                "value" => number_format($valueMovement,2)
                             ]);
 
                     }
@@ -156,13 +156,13 @@ class WalletHistoryService extends Service
                     $pierchartResult['incomes'][] = [
                         "category" => $category,
                         "type" => $type,
-                        "value" => $valueMovement
+                        "value" => number_format($valueMovement,2)
                     ];
                 } else {
                     $pierchartResult['expenses'][] = [
                         "category" => $category,
                         "type" => $type,
-                        "value" => $valueMovement
+                        "value" => number_format($valueMovement,2)
                     ];
                 }
             }

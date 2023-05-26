@@ -29,7 +29,41 @@ class WalletHistoryRepository{
         ]);
     }
 
-    public function getByWallet(string $walletId){
-        return $this->model->with('categories')->where("walletId", new ObjectId($walletId))->get();
+    public function getByWallet(string $walletId, $month = null){
+        $pipeline = [];
+        // return $this->model->with('categories')->where("walletId", new ObjectId($walletId))->get();
+        if($month){
+            $pipeline = [
+                [
+                    '$match' => [
+                        '$expr'=> [
+                            '$eq' => [['$month' => '$created_at'], intval($month)]
+                ]
+                ]
+                ]
+            ];
+        }
+        return $this->model->raw(function($query) use($walletId, $pipeline){
+            return $query->aggregate([
+                ...$pipeline,
+                [
+                    '$lookup' => [
+                        "from" => "categories",
+                        "foreignField" => "_id",
+                        "localField" => "categoryId",
+                        'as'=> "categories",
+                    ],
+                ],
+                [
+                    '$unwind' => '$categories'
+                ],
+
+                [
+                    '$match' =>[
+                         "walletId" => new ObjectId($walletId),
+                    ]
+                ]
+            ]);
+        });
     }
 }

@@ -19,7 +19,8 @@ class WalletHistoryController extends ApiController
 
     public function getHistory(string $walletId){
         try{
-            $data = $this->walletHistoryService->history($walletId);
+            $month = $this->req()->get('month') ?? null;
+            $data = $this->walletHistoryService->history($walletId, $month);
             return $this->response($data);
         }catch(Exception $e){
             return $this->response($e);
