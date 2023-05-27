@@ -96,7 +96,7 @@ class WalletHistoryService extends Service
         $historyByDate = array_map(function ($item) use ($carbon) {
             return [
                 ...$item,
-                "dateName" => $carbon->parse($item['created_at'])->dayName,
+                "dateName" =>   $carbon->parse(array_key_exists('created_at', $item) ? $item['created_at'] : $item['createdAt'])->dayName ,
             ];
         }, $history);
         (array) $barChartResult = [];
@@ -112,7 +112,7 @@ class WalletHistoryService extends Service
                 $barChartResult[$index]['expense'] += floatval(number_format($expenses, 2, '.', ''));
             } else {
                 $barChartResult[] = [
-                    "date" => $value['created_at'],
+                    "date" => array_key_exists('created_at', $value) ? $value['created_at'] :  $value['createdAt'],
                     "dateName" => $value['dateName'],
                     "income" => floatval(floatval(number_format($incomes, 2, '.', ''))),
                     "expense" => floatval(floatval(number_format($expenses, 2, '.', ''))),

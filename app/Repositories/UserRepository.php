@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use App\Models\BaseMongoModel;
 use App\Models\User;
+use Exception;
+use Illuminate\Support\Facades\Hash;
 
 class UserRepository extends Repository
 {
@@ -31,4 +33,5 @@ class UserRepository extends Repository
             "created_at" => now(),
         ]);
     }
+
 }

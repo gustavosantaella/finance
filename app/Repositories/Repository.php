@@ -10,4 +10,12 @@ class Repository {
     public function deleteByPk(string $pk){
         return $this->model->where("_id", $pk)->delete();
     }
+
+    public function update(string $pk, array $payload){
+        return $this->model->where("_id", $pk)->update($payload);
+    }
+
+    public function find(string $pk){
+        return $this->model->find($pk);
+    }
 }

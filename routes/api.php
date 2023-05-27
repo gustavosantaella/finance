@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CountryController;
+use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\WalletController;
 use App\Http\Controllers\Api\WalletHistoryController;
 use App\Http\Middleware\Api\AuthMiddleware;
@@ -32,6 +33,14 @@ Route::group([
     'middleware' =>  'api.auth:customer,admin'
 ], function(){
     Route::get("/", [CategoryController::class, 'getAll']);
+});
+
+Route::group([
+    'prefix'=>'users',
+    'middleware' =>  'api.auth:customer,admin'
+], function(){
+    Route::get("/info", [UserController::class, 'info']);
+    Route::put("/info", [UserController::class, 'updateInfo']);
 });
 
 Route::group([

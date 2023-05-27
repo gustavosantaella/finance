@@ -98,12 +98,48 @@ class UserService extends Service
         }
     }
 
-    public function delete(){
-        try{
+    public function deleteAccount()
+    {
+        try {
             $user = auth()->user();
             $pk = $user->_id;
             $this->userRepo->deleteByPk($pk);
-        }catch(Exception $e){
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function updateInfo($payload)
+    {
+        try {
+            $userPk = auth()->user()->_id;
+            $toUpdate = [];
+            if (array_key_exists('password', $payload)) {
+                $toUpdate['password'] = Hash::make($payload['password']);
+            }
+
+            if (array_key_exists('email', $payload)) {
+                $toUpdate['email'] = $payload['email'];
+            }
+
+            $this->userRepo->update($userPk, $toUpdate);
+
+            return true;
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function getInfo()
+    {
+        try {
+            $id = auth()->user()->_id;
+            $user = $this->userRepo->find($id);
+            if(!$user){
+                throw new Exception('User Not found');
+            }
+            return $user;
+        } catch (Exception $e) {
             throw $e;
         }
     }
