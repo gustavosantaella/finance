@@ -11,11 +11,12 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
+use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 use MongoDB\BSON\ObjectId;
 
 class User extends Authenticatable  implements JWTSubject
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
     protected $collection = 'users';
 
     /**

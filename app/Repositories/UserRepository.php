@@ -5,12 +5,14 @@ namespace App\Repositories;
 use App\Models\BaseMongoModel;
 use App\Models\User;
 
-class UserRepository
+class UserRepository extends Repository
 {
 
     public function __construct(
         private User $user
-    ){}
+    ){
+        parent::__construct($user);
+    }
 
     public function getAll(){
 

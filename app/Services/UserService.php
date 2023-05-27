@@ -97,4 +97,14 @@ class UserService extends Service
             throw $e;
         }
     }
+
+    public function delete(){
+        try{
+            $user = auth()->user();
+            $pk = $user->_id;
+            $this->userRepo->deleteByPk($pk);
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
 }
