@@ -35,5 +35,14 @@ class WalletHistoryController extends ApiController
             return $this->response($e);
         }
     }
+
+    public function detail(string $historyPk){
+        try{
+            $data= $this->walletHistoryService->detail($historyPk);
+            return $this->response($data);
+        }catch(Exception $e){
+            return $this->response($e);
+        }
+    }
    //  Methods
 }

@@ -42,7 +42,7 @@ class WalletHistoryService extends Service
                 "total" => $this->total,
                 "walletId" => $walletId,
                 "history" => $history,
-                "balance" =>(float) $this->incomes - (float)$this->expenses
+                "balance" =>number_format($this->incomes - $this->expenses, 2, '.', '')
             ];
         } catch (Exception $e) {
             throw $e;
@@ -52,7 +52,11 @@ class WalletHistoryService extends Service
     {
         try {
 
-            $this->walletHistoryRepository->add($payload);
+            $this->walletHistoryRepository->add([
+                ...$payload,
+                "historyId" => now()->timestamp
+
+            ]);
             return true;
         } catch (Exception $e) {
             throw $e;
@@ -86,8 +90,8 @@ class WalletHistoryService extends Service
 
         ];
 
-        $metrics['incomes'] =  !($total < 1)  ? floatval(number_format($incomes / $total * 100, 2, '.', '')) : 0.0;
-        $metrics['expenses'] =   !($total < 1)  ?floatval(number_format($expenses / $total * 100, 2, '.', '')) : 0.0;
+        $metrics['incomes'] =  !($total < 1)  ? number_format($incomes / $total * 100, 2, '.', '') : '0.0';
+        $metrics['expenses'] =   !($total < 1)  ?number_format($expenses / $total * 100, 2, '.', '') : '0.0';
         $carbon = new Carbon();
         $historyByDate = array_map(function ($item) use ($carbon) {
             return [
@@ -170,14 +174,41 @@ class WalletHistoryService extends Service
                 }
             }
         }
-        // $pierchartResult['incomes'] = array_map(function($item){
-        //     return[
-        //         ...$item,
-        //         "value" => 2
-        //     ];
-        // },$pierchartResult['incomes']);
+        $pierchartResult['incomes'] = array_map(function($item){
+            return[
+                ...$item,
+                "value" => number_format($item['value'], 2, '.', '')
+            ];
+
+        },$pierchartResult['incomes']);
+        $pierchartResult['expenses'] = array_map(function($item){
+            return[
+                ...$item,
+                "value" => number_format($item['value'], 2, '.', '')
+            ];
+
+        },$pierchartResult['expenses']);
+
+        $barChartResult = array_map(function($item){
+            return[
+                ...$item,
+                "income" => number_format($item['income'], 2, '.', ''),
+                "expense" => number_format($item['expense'], 2, '.', '')
+            ];
+
+        },$barChartResult);
         $metrics['barchart'] = $barChartResult;
         $metrics['piechart'] = $pierchartResult;
         return $metrics;
+    }
+
+    public function detail(string $historyPk){
+        try{
+            [$detail] = $this->walletHistoryRepository->detail($historyPk);
+
+            return $detail;
+        }catch(Exception $e){
+            throw $e;
+        }
     }
 }

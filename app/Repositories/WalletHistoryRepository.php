@@ -20,7 +20,7 @@ class WalletHistoryRepository{
                 "provider" => $payload['provider'],
                 "data" => [],
             ],
-            "hisotyId" => (string) now()->timestamp,
+            "historyId" => (string) now()->timestamp,
             "createdBy" => count($createdBy) > 0? $createdBy :  [
                 ...collect(auth()->user())->toArray()
             ],
@@ -63,6 +63,44 @@ class WalletHistoryRepository{
                          "walletId" => new ObjectId($walletId),
                     ]
                 ]
+            ]);
+        });
+    }
+
+
+    public function detail(string $historyPk){
+        return $this->model->raw(function($query) use ($historyPk){
+            return $query->aggregate([
+                [
+                    '$match' => [
+                        // "walletId"=>new  ObjectId($walletId),
+                        "_id"=> new ObjectId($historyPk),
+            ]
+            ],
+                [
+                    '$lookup' => [
+                        "from"=> "categories",
+                        "foreignField"=> "_id",
+                        "localField"=> "categoryId",
+                        'as' => "categories"
+            ]
+            ],
+                [
+                    '$unwind'=> '$categories'
+            ],
+                [
+                    '$set' =>[
+                        "categories._id"=>[
+                            '$toString' =>'$categories._id'
+            ],
+                       "walletId"=>[
+                            '$toString' =>'$walletId'
+                       ],
+                       "_id" => [
+                            '$toString' =>'$_id'
+                       ],
+            ]
+            ]
             ]);
         });
     }
