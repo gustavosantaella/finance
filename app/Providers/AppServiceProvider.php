@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register(LogIpClientProvider::class);
+        $this->app->register(LogClientProvider::class);
     }
 
     /**

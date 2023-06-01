@@ -41,4 +41,13 @@ class AuthController extends ApiController
             return $this->response($e);
         }
     }
+
+    public function logout(){
+        try{
+            $this->userService->logout();
+            return $this->response(true);
+        }catch(Exception $e){
+            return $this->response($e);
+        }
+    }
 }

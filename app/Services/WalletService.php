@@ -42,6 +42,7 @@ class WalletService extends Service
 
     public function getBalance(string $walletId){
         try{
+            Log::write(auth()->user()?->email);
             $incomes = 0;
             $expenses = 0;
             $wallet = $this->walletRepository->findOne($walletId);

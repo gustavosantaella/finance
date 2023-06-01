@@ -143,4 +143,20 @@ class UserService extends Service
             throw $e;
         }
     }
+
+
+    public function logout(){
+        try{
+            Log::write(auth()->user());
+            if(auth()->user()){
+                auth()->logout();
+                Log::write("User logout");
+                Log::write(auth()->user());
+            }else{
+                Log::write("User not found");
+            }
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
 }
