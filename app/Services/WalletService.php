@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Helpers\Log;
+use App\Helpers\Number;
 use App\Repositories\WalletRepository;
 use App\Services\Service;
 use Exception;
@@ -49,9 +50,9 @@ class WalletService extends Service
             $this->walletHistoryService->getTypesValues($incomes, $expenses, $walletId);
             $balance = $incomes - $expenses;
             return [
-                "balance" => $balance,
-                "expenses" => $expenses,
-                "incomes" => $incomes,
+                "balance" => Number::formatDecimal($balance),
+                "expenses" => Number::formatDecimal($expenses),
+                "incomes" => Number::formatDecimal($incomes),
                 "growthRate" => 0,
                 "info" => $wallet
             ];

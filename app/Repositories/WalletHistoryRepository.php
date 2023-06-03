@@ -24,7 +24,7 @@ class WalletHistoryRepository{
             "createdBy" => count($createdBy) > 0? $createdBy :  [
                 ...collect(auth()->user())->toArray()
             ],
-            "value" =>(int) $payload['value'],
+            "value" =>(float) $payload['value'],
             "description" => array_key_exists('description', $payload) ? $payload['description'] : ''
         ]);
     }

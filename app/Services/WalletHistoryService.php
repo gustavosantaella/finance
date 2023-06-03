@@ -51,7 +51,7 @@ class WalletHistoryService extends Service
     public function addHistory($payload)
     {
         try {
-
+            Log::write($payload);
             $this->walletHistoryRepository->add([
                 ...$payload,
                 "historyId" => now()->timestamp
