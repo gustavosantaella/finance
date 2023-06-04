@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Helpers\Log;
 use App\Models\PasswordResets;
 use App\Repositories\Repository;
 use Carbon\Carbon;
@@ -30,7 +31,9 @@ class PasswordResetRepository extends Repository {
 
     public function findByCode($code)
     {
-        return $this->model->where('token', $code)->first();
+        $data = $this->model->where("token", (int) $code)->first();
+
+        return $data;
 
     }
 }

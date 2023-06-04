@@ -28,6 +28,8 @@ Route::group([
     Route::post("/login", [AuthController::class, 'login']);
     Route::post("/logout", [AuthController::class, 'logout'])->middleware('api.auth:customer,admin');
     Route::post("/forgot-password", [AuthController::class, 'forgotPassword']);
+    Route::post("/validate-code", [AuthController::class, 'validateCode']);
+    Route::post("/forgot-password-change", [AuthController::class, 'resetPassword']);
 });
 
 Route::group([

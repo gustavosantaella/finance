@@ -56,17 +56,24 @@ class AuthService extends Service{
 
     public function validateCode($code){
         try{
+            Log::write(1);
             $data = $this->passwordResetRepository->findByCode($code);
+            Log::write(2);
             if(!$data){
+                Log::write(3);
                 throw new Exception('Code not exists');
             }
 
-            if(now()->timestamp < $data->expired_at){
+            Log::write(4);
+            if($data->expired_at < now()->timestamp){
+                Log::write(8);
                 throw neW Exception("The code is already expired");
             }
-            $this->passwordResetRepository->deleteByPk($data->id);
+            $data->delete();
             return Crypt::encrypt($data->email);
         }catch(Exception $e){
+            Log::write("error here");
+            Log::write($e->getMessage());
             throw $e;
         }
     }
