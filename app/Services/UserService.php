@@ -130,12 +130,22 @@ class UserService extends Service
         }
     }
 
+    public function updatePassword($userPk, $password)
+    {
+        try {
+            $this->userRepo->update($userPk, [
+                "password" => Hash::make($password)
+            ]);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
     public function getInfo()
     {
         try {
             $id = auth()->user()->_id;
             $user = $this->userRepo->find($id);
-            if(!$user){
+            if (!$user) {
                 throw new Exception('User Not found');
             }
             return $user;
@@ -145,17 +155,18 @@ class UserService extends Service
     }
 
 
-    public function logout(){
-        try{
+    public function logout()
+    {
+        try {
             Log::write(auth()->user());
-            if(auth()->user()){
+            if (auth()->user()) {
                 auth()->logout();
                 Log::write("User logout");
                 Log::write(auth()->user());
-            }else{
+            } else {
                 Log::write("User not found");
             }
-        }catch(Exception $e){
+        } catch (Exception $e) {
             throw $e;
         }
     }

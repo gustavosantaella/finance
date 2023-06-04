@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Api\Auth;
 
+use App\Helpers\Log;
 use App\Http\Controllers\Api\ApiController;
+use App\Services\AuthService;
 use App\Services\UserService;
 use Exception;
 
 class AuthController extends ApiController
 {
     public function __construct(
-        private UserService $userService
+        private UserService $userService,
+        private AuthService $authService
     ) {
     }
     public function register()
@@ -46,6 +49,35 @@ class AuthController extends ApiController
         try{
             $this->userService->logout();
             return $this->response(true);
+        }catch(Exception $e){
+            return $this->response($e);
+        }
+    }
+
+
+    public function forgotPassword(){
+        try{
+            $data = $this->authService->forgotPassword($this->req()->get('email'));
+            return $this->response($data);
+        }catch(Exception $e){
+            return $this->response($e);
+        }
+    }
+
+
+    public function resetPassword(){
+        try{
+            $data = $this->authService->resetPassword($this->req()->get('password'), $this->req()->get('email'));
+            return $this->response($data);
+        }catch(Exception $e){
+            return $this->response($e);
+        }
+    }
+
+    public function validateCode(){
+        try{
+            $data = $this->authService->validateCode($this->req()->get('code'));
+            return $this->response($data);
         }catch(Exception $e){
             return $this->response($e);
         }

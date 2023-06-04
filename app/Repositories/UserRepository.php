@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\BaseMongoModel;
+use Illuminate\Support\Str;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Hash;
@@ -27,7 +28,7 @@ class UserRepository extends Repository
 
     public function create(string $email, string $password, array $roles = []): User{
         return $this->user->create([
-            "email" => $email,
+            "email" => Str::lower($email),
             "password" => $password,
             "roles" => $roles,
             "created_at" => now(),

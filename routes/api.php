@@ -6,7 +6,7 @@ use App\Http\Controllers\Api\CountryController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\WalletController;
 use App\Http\Controllers\Api\WalletHistoryController;
-use App\Http\Middleware\Api\AuthMiddleware;
+use App\Http\Controllers\Api\Admin\EmailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +27,7 @@ Route::group([
     Route::post("/register", [AuthController::class, 'register']);
     Route::post("/login", [AuthController::class, 'login']);
     Route::post("/logout", [AuthController::class, 'logout'])->middleware('api.auth:customer,admin');
+    Route::post("/forgot-password", [AuthController::class, 'forgotPassword']);
 });
 
 Route::group([
@@ -64,6 +65,8 @@ Route::group([
 ], function(){
     Route::get("/", [CountryController::class, 'getAll']);
 });
+
+
 
 Route::get('/health', function(){
     return true;
