@@ -65,7 +65,7 @@ class UserService extends Service
             $passwordHasshed = Hash::make($password);
             $country = $this->countryService->getByNames($country);
 
-            $user = $this->userRepo->create($email, $passwordHasshed, ['customer']);
+            $user = $this->userRepo->create($email, $passwordHasshed, $country['iso2'], ['customer']);
             $this->walletService->create($user->id, $country['currency']);
 
             return true;

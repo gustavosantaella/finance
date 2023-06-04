@@ -26,11 +26,12 @@ class UserRepository extends Repository
         return $this->user->where('email', $email)->first();
     }
 
-    public function create(string $email, string $password, array $roles = []): User{
+    public function create(string $email, string $password, string $country, array $roles = []): User{
         return $this->user->create([
             "email" => Str::lower($email),
             "password" => $password,
             "roles" => $roles,
+            "country" => $country,
             "created_at" => now(),
         ]);
     }
