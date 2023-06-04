@@ -17,6 +17,11 @@ class AuthController extends ApiController
     }
     public function register()
     {
+        $this->req()->validate([
+            "email" => ['email', 'required'],
+            'password' => ['required', 'min:8'],
+            'country' => ['required'],
+        ]);
         try {
             ['email' => $email, 'password' => $password, 'country' => $country] = $this->req()->toArray();
             $response = $this->userService->newUser($email, $password, $country);
