@@ -43,7 +43,6 @@ class WalletService extends Service
 
     public function getBalance(string $walletId){
         try{
-            Log::write(auth()->user()?->email);
             $incomes = 0;
             $expenses = 0;
             $wallet = $this->walletRepository->findOne($walletId);
@@ -58,6 +57,19 @@ class WalletService extends Service
             ];
         }catch(Exception $e){
              throw $e;
+        }
+    }
+
+    public function getByPk(string $pk){
+        try{
+            Log::write($pk);
+            $data = $this->walletRepository->findOne($pk);
+            if(!$data){
+                throw new Exception("Wallet not found");
+            }
+            return $data;
+        }catch(Exception $e){
+            throw $e;
         }
     }
 }

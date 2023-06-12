@@ -27,10 +27,11 @@ class LogClientProvider extends ServiceProvider
         $host = '';
         $body = request()?->header();
         $urlToQuery = request()->url();
+        $method = request()->method();
         if(array_key_exists('host', $body) && count($body['host']) > 0){
             $host = $body['host'][0];
         }
-        $message = "\n--------------------------\nClient IP: $ip\nUrl: $urlToQuery\n--------------------------";
+        $message = "\n--------------------------\nClient IP: $ip\nUrl: ($method) $urlToQuery\n--------------------------";
         Log::write($message);
 
     }

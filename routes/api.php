@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\WalletController;
 use App\Http\Controllers\Api\WalletHistoryController;
 use App\Http\Controllers\Api\Admin\EmailController;
+use App\Http\Controllers\Api\Schedules\FinanceScheduleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +60,15 @@ Route::group([
         Route::get("/{walletId}", [WalletHistoryController::class, 'getHistory']);
         Route::post("/", [WalletHistoryController::class, 'add']);
         Route::get("/detail/{historyPk}", [WalletHistoryController::class, 'detail']);
+        Route::post("/schedule");
+        Route::group([
+            'prefix'=>'schedule',
+        ], function(){
+            Route::post("/add", [FinanceScheduleController::class, 'newSchedule']);
+            Route::get("/by-wallet/{id}", [FinanceScheduleController::class, 'getByWallet']);
+            Route::delete("/delete/{schedulePk}", [FinanceScheduleController::class, 'delete']);
+
+        });
     });
 });
 

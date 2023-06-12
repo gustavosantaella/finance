@@ -51,12 +51,12 @@ class WalletHistoryService extends Service
     public function addHistory($payload)
     {
         try {
-            Log::write($payload);
+            $createdBy = array_key_exists('createdBy', $payload)  ? $payload['createdBy']: collect(auth()->user())->toArray() ;
             $this->walletHistoryRepository->add([
                 ...$payload,
                 "historyId" => now()->timestamp
 
-            ]);
+            ], $createdBy);
             return true;
         } catch (Exception $e) {
             throw $e;
