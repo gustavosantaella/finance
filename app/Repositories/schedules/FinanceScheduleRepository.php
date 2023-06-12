@@ -25,6 +25,7 @@ class FinanceScheduleRepository extends Repository
     }
 
     public function whereToday($dateString){
+        Log::write($dateString);
         return $this->model->where("startDate", "<=", $dateString)->where("nextDate", "=", $dateString)->get();
     }
 }

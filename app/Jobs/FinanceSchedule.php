@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Helpers\DateString;
 use App\Helpers\Log;
 use App\Services\Schedules\FinanceScheduleService;
 use App\Services\WalletHistoryService;
@@ -36,7 +37,6 @@ class FinanceSchedule implements ShouldQueue
     {
         $schedules = $this->financeScheduleService->allOfToday();
         //
-
         foreach ($schedules as $schedule) {
 
            try{
@@ -50,8 +50,12 @@ class FinanceSchedule implements ShouldQueue
                 "description" => $schedule['name'],
                 "createdBy" => $user->toArray()
             ]);
-           }catch(Exception $e){
 
+            $schedule->update([
+                "nextDate" =>  DateString::nexDate($schedule['periodicity'])
+            ]);
+           }catch(Exception $e){
+            Log::write($e->getMessage());
            }
         }
     }
