@@ -10,8 +10,7 @@ use Exception;
 use Illuminate\Http\Request;
 
 
-class WalletHistoryController extends ApiController
-{
+class WalletHistoryController extends ApiController {
     public function __construct(
         private WalletHistoryService $walletHistoryService,
     ){}
@@ -44,5 +43,14 @@ class WalletHistoryController extends ApiController
             return $this->response($e);
         }
     }
-   //  Methods
+
+    public function deleteMovement($historyPk){
+        try{
+
+            $data = $this->walletHistoryService->deleteMovement($historyPk);
+            return $this->response($data);
+        }catch(Exception $e){
+            return $this->response($e);
+        }
+    }   //  Methods
 }

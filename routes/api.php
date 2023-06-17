@@ -60,6 +60,7 @@ Route::group([
         Route::get("/{walletId}", [WalletHistoryController::class, 'getHistory']);
         Route::post("/", [WalletHistoryController::class, 'add']);
         Route::get("/detail/{historyPk}", [WalletHistoryController::class, 'detail']);
+        Route::delete("/delete/{historyPk}", [WalletHistoryController::class, 'deleteMovement']);
         Route::post("/schedule");
         Route::group([
             'prefix'=>'schedule',
