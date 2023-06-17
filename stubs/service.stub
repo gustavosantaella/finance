@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Services;
+
+use App\Services\Service;
+use Exception;
+
+class {{ class }} extends Service
+{
+    public function __construct(){}
+}

@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Api\ApiController;
+
+
+class {{ class }} extends ApiController
+{
+    public function __construct(){}
+   //  Methods
+}
