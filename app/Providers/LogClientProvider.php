@@ -28,10 +28,12 @@ class LogClientProvider extends ServiceProvider
         $body = request()?->header();
         $urlToQuery = request()->url();
         $method = request()->method();
+        $payload = json_encode(request()->all());
         if(array_key_exists('host', $body) && count($body['host']) > 0){
             $host = $body['host'][0];
         }
-        $message = "\n--------------------------\nClient IP: $ip\nUrl: ($method) $urlToQuery\n--------------------------";
+        $user = request()->header('authorization');
+        $message = "\n--------------------------\nClient IP: $ip\nUrl: ($method) $urlToQuery\nPayload:$payload \n user: $user \n--------------------------";
         Log::write($message);
 
     }
