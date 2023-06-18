@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Helpers\Log;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class LogClientProvider extends ServiceProvider
@@ -28,10 +29,13 @@ class LogClientProvider extends ServiceProvider
         $body = request()?->header();
         $urlToQuery = request()->url();
         $method = request()->method();
+        $payload = json_encode(request()->all());
         if(array_key_exists('host', $body) && count($body['host']) > 0){
             $host = $body['host'][0];
         }
-        $message = "\n--------------------------\nClient IP: $ip\nUrl: ($method) $urlToQuery\n--------------------------";
+        $user = request()->header('authorization');
+        $date = Carbon::now()->toString();
+        $message = "\n--------------------------\nClient IP: $ip\nUrl: ($method) $urlToQuery\nPayload:$payload \n user: $user\n When: $date \n--------------------------";
         Log::write($message);
 
     }
