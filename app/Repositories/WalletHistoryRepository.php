@@ -5,11 +5,13 @@ namespace App\Repositories;
 use App\Models\WalletHistoryModel;
 use MongoDB\BSON\ObjectId;
 
-class WalletHistoryRepository{
+class WalletHistoryRepository extends Repository{
 
     public function __construct(
         private WalletHistoryModel $model
-    ){}
+    ){
+        parent::__construct($model);
+    }
 
     public function add(array $payload, array $createdBy = []){
         return $this->model->create([

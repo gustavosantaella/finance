@@ -202,6 +202,20 @@ class WalletHistoryService extends Service
         return $metrics;
     }
 
+    public function deleteMovement($historyId){
+        try{
+            Log::write("deleting $historyId");
+           $this->walletHistoryRepository->deleteByPk($historyId);
+           Log::write("deleted");
+            return true;
+        }catch(Exception $e){
+            Log::write("error");
+            Log::write($e->getMessage());
+
+            throw $e;
+        }
+    }
+
     public function detail(string $historyPk){
         try{
             [$detail] = $this->walletHistoryRepository->detail($historyPk);
