@@ -23,7 +23,12 @@ class AuthService extends Service{
     }
     public function forgotPassword(string $email){
         try{
+            $arrayMail = explode('@', $email);
+            if(str_contains($arrayMail[1],  'test')){
+                throw new Exception("This email is just to test");
+            }
             $user = $this->userService->findByEmail($email);
+
             $data = $this->passwordResetRepository->findByEmail($email);
             if($data){
                 $this->passwordResetRepository->removeByEmail($email);
