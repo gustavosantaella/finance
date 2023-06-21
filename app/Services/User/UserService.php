@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\User;
 
 use App\Helpers\Log;
 use App\Repositories\UserRepository;
 use App\Services\Service;
+use App\Services\Wallet\WalletService;
+use App\Services\Country\CountryService;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;

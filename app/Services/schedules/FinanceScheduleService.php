@@ -7,7 +7,7 @@ use App\Helpers\DateString;
 use App\Helpers\Log;
 use App\Repositories\Schedules\FinanceScheduleRepository;
 use App\Services\Service;
-use App\Services\WalletService;
+use App\Services\Wallet\WalletService;
 use Exception;
 use MongoDB\Operation\Aggregate;
 

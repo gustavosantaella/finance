@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Email;
 
 use App\Helpers\Log;
 use App\Mail\DefaultMail;

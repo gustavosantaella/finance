@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\ApiController;
-use App\Services\UserService;
+use App\Services\User\UserService;
 use Exception;
 
 class UserController extends ApiController
