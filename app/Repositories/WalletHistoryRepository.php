@@ -106,4 +106,8 @@ class WalletHistoryRepository extends Repository{
             ]);
         });
     }
+
+    public function deleteByWalletId(string $walletId){
+        return $this->model->where("walletId", new ObjectId($walletId))->delete();
+    }
 }

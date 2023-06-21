@@ -2,10 +2,12 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Auth;
 use App\Helpers\Log;
 use App\Repositories\WalletHistoryRepository;
 use App\Repositories\WalletRepository;
 use App\Services\Service;
+use App\Services\WalletService;
 use Carbon\Carbon;
 use Exception;
 
@@ -212,6 +214,23 @@ class WalletHistoryService extends Service
             Log::write("error");
             Log::write($e->getMessage());
 
+            throw $e;
+        }
+    }
+
+    public function deleteHistory($walletId){
+        try {
+            $wallet = $this->walletRepository->findOne($walletId);
+            if ($wallet->owner != Auth::user()->_id) {
+                throw new Exception("You're not allowed to do this.");
+            }
+            Log::write("deleting $walletId");
+            $this->walletHistoryRepository->deleteByWalletId($walletId);
+            Log::write("deleted");
+            return true;
+        }catch (Exception $e) {
+            Log::write("error");
+            Log::write($e->getMessage());
             throw $e;
         }
     }

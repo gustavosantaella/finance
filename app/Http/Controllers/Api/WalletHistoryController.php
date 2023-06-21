@@ -53,4 +53,13 @@ class WalletHistoryController extends ApiController {
             return $this->response($e);
         }
     }   //  Methods
+
+    public function deleteHistory($walletId){
+        try{
+            $data = $this->walletHistoryService->deleteHistory($walletId);
+            return $this->response($data); 
+        }catch(Exception $e){
+            return $this->response($e);
+        }
+    }
 }
