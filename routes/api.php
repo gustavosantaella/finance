@@ -59,6 +59,7 @@ Route::group([
     ], function(){
         Route::get("/{walletId}", [WalletHistoryController::class, 'getHistory']);
         Route::post("/", [WalletHistoryController::class, 'add']);
+        Route::put("/restore-finances/{walletId}", [WalletHistoryController::class, 'deleteHistory']);
         Route::get("/detail/{historyPk}", [WalletHistoryController::class, 'detail']);
         Route::delete("/delete/{historyPk}", [WalletHistoryController::class, 'deleteMovement']);
         Route::post("/schedule");
