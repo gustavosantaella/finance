@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Helpers\Log;
 use App\Http\Controllers\Api\ApiController;
-use App\Services\CategoryService;
+use App\Services\Category\CategoryService;
 use Exception;
 use Illuminate\Http\Request;
 

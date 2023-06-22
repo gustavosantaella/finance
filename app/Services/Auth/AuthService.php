@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Auth;
 
 use App\Helpers\Log;
 use App\Repositories\PasswordResetRepository;
+use App\Services\Email\EmailService;
+use App\Services\Service;
+use App\Services\User\UserService;
 use Exception;
 use Illuminate\Support\Facades\Crypt;
-use Lcobucci\JWT\Encoder;
-use PharIo\Manifest\Email;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Facades\JWTAuth;
-use Tymon\JWTAuth\Facades\JWTProvider;
+
 
 class AuthService extends Service{
 
