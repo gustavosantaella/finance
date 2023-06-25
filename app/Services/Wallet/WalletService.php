@@ -55,7 +55,6 @@ class WalletService extends Service
     public function getByPk(string $pk)
     {
         try {
-            Log::write($pk);
             $data = $this->walletRepository->findOne($pk);
             if (!$data) {
                 throw new Exception("Wallet not found");
