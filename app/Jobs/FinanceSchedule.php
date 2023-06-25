@@ -6,7 +6,7 @@ use App\Helpers\DateString;
 use App\Helpers\Log;
 use App\Services\Schedules\FinanceScheduleService;
 use App\Services\Wallet\WalletService;
-use App\Services\WalletHistoryService;
+use App\Services\Wallet\WalletHistoryService;
 use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
