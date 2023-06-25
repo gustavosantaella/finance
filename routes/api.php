@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\WalletController;
 use App\Http\Controllers\Api\WalletHistoryController;
 use App\Http\Controllers\Api\Admin\EmailController;
+use App\Http\Controllers\Api\LoanController;
 use App\Http\Controllers\Api\Schedules\FinanceScheduleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -72,6 +73,17 @@ Route::group([
 
         });
     });
+});
+
+Route::group([
+    'prefix'=>'loans',
+    'middleware' =>  'api.auth:customer,admin'
+], function(){
+   Route::post("/new", [LoanController::class, 'create']);
+   Route::delete("/remove/{loanPk}", [LoanController::class, 'delete']);
+   Route::put("/update-status/{loanPk}", [LoanController::class, 'updateStatus']);
+   Route::get("/by-user", [LoanController::class, 'getByUser']);
+   Route::get("/by-user-type", [LoanController::class, 'getByUserAndType']);
 });
 
 Route::group([
