@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Helpers\Log;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\LoanRequest;
-use App\Services\Category\CategoryService;
 use App\Services\Loan\LoanService;
-use App\Services\Wallet\WalletService;
 use Exception;
 use Illuminate\Http\Request;
 

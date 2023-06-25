@@ -6,7 +6,6 @@ use App\Http\Controllers\Api\CountryController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\WalletController;
 use App\Http\Controllers\Api\WalletHistoryController;
-use App\Http\Controllers\Api\Admin\EmailController;
 use App\Http\Controllers\Api\LoanController;
 use App\Http\Controllers\Api\Schedules\FinanceScheduleController;
 use Illuminate\Http\Request;
