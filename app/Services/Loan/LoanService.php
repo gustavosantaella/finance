@@ -34,7 +34,7 @@ class LoanService extends Service
                     "provider" => "WAFI",
                 ]);
             }
-            $data = $this->loanRepository->create([...$payload, 'userId' => auth()->user()->_id]);
+            $data = $this->loanRepository->createData([...$payload, 'userId' => auth()->user()->_id]);
             return $data;
         } catch (Exception $e) {
             throw $e;

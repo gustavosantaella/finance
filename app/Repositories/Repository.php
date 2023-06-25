@@ -19,7 +19,7 @@ class Repository {
         return $this->model->find($pk);
     }
 
-    public function create(array $payload){
+    public function createData(array $payload){
         return $this->model->create($payload);
     }
 }
