@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Helpers\Log;
 use App\Http\Controllers\Api\ApiController;
 use App\Repositories\WalletRepository;
-use App\Services\WalletHistoryService;
+use App\Services\Wallet\WalletHistoryService;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -57,7 +57,7 @@ class WalletHistoryController extends ApiController {
     public function deleteHistory($walletId){
         try{
             $data = $this->walletHistoryService->deleteHistory($walletId);
-            return $this->response($data); 
+            return $this->response($data);
         }catch(Exception $e){
             return $this->response($e);
         }

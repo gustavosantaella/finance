@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Category;
 
 use App\Repositories\CategoryRepository;
 use App\Services\Service;
@@ -33,4 +33,18 @@ class CategoryService extends Service
             throw $e;
         }
     }
+
+    public function getCategory(string $categoryPk){
+        try{
+            $data = $this->categoryRepository->find($categoryPk);
+            if(!$data){
+                throw new Exception("Category not found");
+            }
+            return $data;
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+
+
 }

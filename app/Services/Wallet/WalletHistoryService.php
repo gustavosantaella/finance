@@ -1,41 +1,40 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Wallet;
 
 use Illuminate\Support\Facades\Auth;
 use App\Helpers\Log;
 use App\Repositories\WalletHistoryRepository;
 use App\Repositories\WalletRepository;
 use App\Services\Service;
-use App\Services\WalletService;
+use App\Services\Wallet\WalletOperationService;
+use App\Services\Wallet\WalletService;
 use Carbon\Carbon;
 use Exception;
+use WeakReference;
 
 class WalletHistoryService extends Service
 {
     private string $total = '0.0';
     private string $incomes = '0.0';
     private string $expenses = '0.0';
+
+
     public function __construct(
         private WalletHistoryRepository $walletHistoryRepository,
-        private WalletRepository $walletRepository
+        private WalletRepository $walletRepository,
+        private WalletOperationService $walletOperationService,
+        private WalletService $walletService
     ) {
     }
 
-    public function financialvalues($history){
-        $getHistoryValue = fn (string $type) => array_map(function ($item) use ($type) {
-            return $item['type'] == $type ? $item['value'] : 0;
-        }, collect($history)->toArray());
-        $this->incomes = (number_format(array_sum($getHistoryValue('income')), 2, '.', ''));
-        $this->expenses = number_format(array_sum($getHistoryValue('expense')),2, '.', '');
-        $this->total = (number_format((float)$this->incomes + (float)$this->expenses,2, '.', ''));
-    }
+
     public function history(string $walletId, $month = null)
     {
         try {
 
             $history = $this->walletHistoryRepository->getByWallet($walletId, $month);
-            $this->financialvalues($history);
+            $this->total = $this->walletOperationService->financialvalues($history, $this->incomes,$this->expenses);
             $metrics = $this->metricsFromArrayHistory(collect($history)->toArray());
             return [
                 "metrics" => $metrics,
@@ -65,16 +64,7 @@ class WalletHistoryService extends Service
         }
     }
 
-    public function getTypesValues(&$incomes, &$expenses, $walletId){
-        try{
-             $history = $this->walletHistoryRepository->getByWallet($walletId);
-             $this->financialvalues($history);
-             $incomes = $this->incomes;
-             $expenses = $this->expenses;
-        }catch(Exception $e){
-            throw $e;
-        }
-    }
+
 
     public function metricsFromArrayHistory(array $history)
     {
@@ -220,11 +210,11 @@ class WalletHistoryService extends Service
 
     public function deleteHistory($walletId){
         try {
-            $wallet = $this->walletRepository->findOne($walletId);
+            $wallet = $this->walletService->getByPk($walletId);
+            Log::write("deleting $wallet");
             if ($wallet->owner != Auth::user()->_id) {
                 throw new Exception("You're not allowed to do this.");
             }
-            Log::write("deleting $walletId");
             $this->walletHistoryRepository->deleteByWalletId($walletId);
             Log::write("deleted");
             return true;

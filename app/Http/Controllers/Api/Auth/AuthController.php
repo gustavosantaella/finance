@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Helpers\Log;
 use App\Http\Controllers\Api\ApiController;
-use App\Services\AuthService;
-use App\Services\UserService;
+use App\Services\Auth\AuthService;
+use App\Services\User\UserService;
 use Exception;
 
 class AuthController extends ApiController

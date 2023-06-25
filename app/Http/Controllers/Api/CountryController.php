@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\ApiController;
-use App\Services\CountryService;
+use App\Services\Country\CountryService;
 use Exception;
 use Illuminate\Http\Request;
 

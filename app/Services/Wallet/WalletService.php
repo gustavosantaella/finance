@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Wallet;
 
 use App\Helpers\Log;
 use App\Helpers\Number;
 use App\Repositories\WalletRepository;
 use App\Services\Service;
+use App\Services\Wallet\WalletOperationService;
 use Exception;
 
 class WalletService extends Service
 {
     public function __construct(
         private WalletRepository $walletRepository,
-        private WalletHistoryService $walletHistoryService
+        private WalletOperationService $walletOperationService
     ) {
     }
 
@@ -20,7 +21,7 @@ class WalletService extends Service
     {
         try {
             $exists = $this->walletRepository->existWalletByCurrency($owner, $currency);
-            if($exists){
+            if ($exists) {
                 throw new Exception("This currency already exists in your wallets");
             }
             return $this->walletRepository->create(
@@ -32,43 +33,34 @@ class WalletService extends Service
         }
     }
 
-    public function getByOwner(string $owner): array {
-        try{
+    public function getByOwner(string $owner): array
+    {
+        try {
             $wallets = $this->walletRepository->walletsByOwner($owner)->toArray();
             return $wallets;
-        }catch(Exception $e){
+        } catch (Exception $e) {
             throw $e;
         }
     }
 
-    public function getBalance(string $walletId){
-        try{
-            $incomes = 0;
-            $expenses = 0;
-            $wallet = $this->walletRepository->findOne($walletId);
-            $this->walletHistoryService->getTypesValues($incomes, $expenses, $walletId);
-            $balance = $incomes - $expenses;
-            return [
-                "balance" => Number::formatDecimal($balance),
-                "expenses" => Number::formatDecimal($expenses),
-                "incomes" => Number::formatDecimal($incomes),
-                "growthRate" => 0,
-                "info" => $wallet
-            ];
-        }catch(Exception $e){
-             throw $e;
+    public function getBalance(string $walletId)
+    {
+        try {
+            return $this->walletOperationService->getBalance($walletId);
+        } catch (Exception $e) {
+            throw $e;
         }
     }
 
-    public function getByPk(string $pk){
-        try{
-            Log::write($pk);
+    public function getByPk(string $pk)
+    {
+        try {
             $data = $this->walletRepository->findOne($pk);
-            if(!$data){
+            if (!$data) {
                 throw new Exception("Wallet not found");
             }
             return $data;
-        }catch(Exception $e){
+        } catch (Exception $e) {
             throw $e;
         }
     }

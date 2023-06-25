@@ -18,4 +18,8 @@ class Repository {
     public function find(string $pk){
         return $this->model->find($pk);
     }
+
+    public function create(array $payload){
+        return $this->model->create($payload);
+    }
 }
