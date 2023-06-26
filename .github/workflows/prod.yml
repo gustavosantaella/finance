@@ -3,16 +3,13 @@ on:
     branches: [  master ]
 name: CI - PROD
 
-env:
-  host: ${{ secrets.IP_SERVER_PROD }}
-  key: ${{ secrets.SSH_KEY_SOFTLINK_PLURIZA }}
-  port: ${{ secrets.SSSH_PORT_PROD }}
-  username: ${{ secrets.VM_USER }}
+
 
 jobs:
   deployProduction:
     name: Deploy to prod
     runs-on: ubuntu-latest
+    environment: wafi
     steps:
     - run: echo ${#host}
     - uses: actions/checkout@master
@@ -20,14 +17,19 @@ jobs:
         fetch-depth: 0
     - name: Configue credentials
       uses: appleboy/ssh-action@v0.1.10
-
+      env:
+        host: ${{ secrets.IP_SERVER_PROD }}
+        key: ${{ secrets.SSH_KEY_SOFTLINK_PLURIZA }}
+        port: ${{ secrets.SSSH_PORT_PROD }}
+        username: ${{ secrets.VM_USER }}
+        path: ${{ secrets.PROJECT_PATH }}
       with:
-        host: ${{ env.IP_SERVER_PROD }}
-        key: ${{ env.SSH_KEY_SOFTLINK_PLURIZA }}
-        port: ${{ env.SSSH_PORT_PROD }}
-        username: ${{ env.VM_USER }}
+        host: ${{ env.host }}
+        key: ${{ env.key }}
+        port: ${{ env.port }}
+        username: ${{ env.username }}
         script: |
-          cd ${{ env.PROJECT_PATH }}
+          cd ${{ env.path }}
           sh start.sh
 
 
