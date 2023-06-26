@@ -22,12 +22,12 @@ jobs:
       uses: appleboy/ssh-action@v0.1.10
 
       with:
-        host: ${{ secrets.IP_SERVER_PROD }}
-        key: ${{ secrets.SSH_KEY_SOFTLINK_PLURIZA }}
-        port: ${{ secrets.SSSH_PORT_PROD }}
-        username: ${{ secrets.VM_USER }}
+        host: ${{ env.IP_SERVER_PROD }}
+        key: ${{ env.SSH_KEY_SOFTLINK_PLURIZA }}
+        port: ${{ env.SSSH_PORT_PROD }}
+        username: ${{ env.VM_USER }}
         script: |
-          cd ${{ secrets.PROJECT_PATH }}
+          cd ${{ env.PROJECT_PATH }}
           sh start.sh
 
 
