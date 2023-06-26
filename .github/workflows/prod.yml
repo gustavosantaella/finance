@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@master
       with:
         fetch-depth: 0
-
+    - run: echo ${{ vars.REPO_OWNER }}
     - name: Configue credentials
       uses: appleboy/ssh-action@v0.1.10
       env:
