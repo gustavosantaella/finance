@@ -18,12 +18,17 @@ jobs:
 
     - name: Configue credentials
       uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
-      with:
+      env:
         ORIGIN: ${{ secrets.IP_SERVER_PROD }}
         SSHKEY: ${{ secrets.SSH_KEY_SOFTLINK_PLURIZA }}
-        NAME: production
         PORT: ${{ secrets.SSSH_PORT_PROD }}
         USER: ${{ secrets.VM_USER }}
+      with:
+        ORIGIN: ${{ env.IP_SERVER_PROD }}
+        SSHKEY: ${{ env.SSH_KEY_SOFTLINK_PLURIZA }}
+        NAME: production
+        PORT: ${{ env.SSSH_PORT_PROD }}
+        USER: ${{ env.VM_USER }}
     - name: "Connect to VM"
       run: ssh production
     - name: "Acces to project directory"
