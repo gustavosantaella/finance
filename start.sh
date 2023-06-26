@@ -14,6 +14,7 @@ php artisan route:cache
 
 echo  "Stop services"
 pkill -f wafi
+pkill -f finance
 
 echo "Running server"
 #nohup php artisan serve --host 0.0.0.0 --port 8000 > logs/prod/server.log &
