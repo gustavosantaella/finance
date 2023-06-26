@@ -4,7 +4,6 @@ on:
 name: CI - PROD
 
 
-
 jobs:
   deployProduction:
     name: Deploy to prod
