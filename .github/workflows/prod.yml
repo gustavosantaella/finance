@@ -2,11 +2,6 @@ on:
   push:
     branches: [  master ]
 name: CI - PROD
-
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   deployProduction:
     name: Deploy to prod
