@@ -38,6 +38,7 @@ Route::group([
     'middleware' =>  'api.auth:customer,admin'
 ], function(){
     Route::get("/", [CategoryController::class, 'getAll']);
+    Route::post("/create", [CategoryController::class, 'create']);
 });
 
 Route::group([

@@ -15,4 +15,8 @@ class CategoryRepository extends Repository{
     public function all(string &$lang) {
         return $this->model->orderBy('name', 'asc')->where('lang', $lang)->get();
     }
+
+    public function findByNmae(string $name){
+        return $this->model->where("name", $name)->first();
+    }
 }
