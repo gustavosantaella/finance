@@ -46,5 +46,24 @@ class CategoryService extends Service
         }
     }
 
+    public function create(array $payload){
+        try{
+            $name = $payload['name'];
+            $category = $this->categoryRepository->findByNmae($name);
+            if($category){
+                throw new Exception("Category already exists");
+            }
+            $category = $this->categoryRepository->createData([
+                "name" => $name,
+                "lang" => $payload['lang'],
+                "createdBy" => auth()->user()->toArray()
+            ]);
+
+            return $category;
+        }catch(Exception $e){
+            throw $e;
+        }
+    }
+
 
 }
