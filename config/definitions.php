@@ -2,6 +2,9 @@
 
 
 return [
+    "langs" => [
+        "default" => "en"
+    ],
     "http" => [
         "statusCodes" => [
             "ok" => [200, 201],

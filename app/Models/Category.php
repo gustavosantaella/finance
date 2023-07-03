@@ -6,5 +6,6 @@ class Category extends BaseMongoModel
 {
     protected $collection = 'categories';
 
+    protected $guarded = [];
 
 }
